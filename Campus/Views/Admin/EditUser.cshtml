@@ -1,0 +1,45 @@
+﻿@model AppUser
+<div class="container-fluid">
+	<div class="panel panel-default">
+		<form method="post" asp-action="EditUser">
+			<input asp-for="Id" type="hidden" />
+			<div class="panel-body">
+				<div class="panel-heading"><strong>@Model.UserName</strong></div>
+				<table class="table">
+					<tr><td>昵称：</td><td><input asp-for="Nickname" style="width:80%" /></td></tr>
+					<tr>
+						<td>头像：</td>
+						<td>
+							<input asp-for="HeadPortrait" type="hidden" />
+							<img width="50px" id="img" src="@Model.HeadPortrait" asp-append-version />
+							<button type="button" id="btn_reset" class="btn btn-link">重置头像</button>
+						</td>
+					</tr>
+					<tr><td>性别：</td><td><input asp-for="Gender.GenderValue" style="width:80%" /></td></tr>
+					<tr><td>生日：</td><td><input asp-for="Birth" type="date" style="width:80%" /></td></tr>
+					<tr><td>个性签名：</td><td><input asp-for="PersonalSignature" style="width:80%" /></td></tr>
+					<tr><td>评论数：@Model.Comments.Count</td><td>收藏数：@Model.Collections.Count</td></tr>
+					<tr><td>点赞数：@Model.Fabulous.Count</td><td>关注数：@Model.Follows.Count</td></tr>
+					<tr><td>粉丝数：@Model.Targets.Count</td><td>文章数：@Model.Works.Count</td></tr>
+					<tr><td>发布活动：@Model.Activities.Count</td><td>参与活动：@Model.Enrolls.Count</td></tr>
+					<tr><td>提交意见：@Model.Opinions.Count</td><td>注册时间：@Model.CreateAt</td></tr>
+				</table>
+				<div class="col-sm-offset-2 col-sm-10 text-right">
+					<a class="btn btn-default" asp-action="ListUsers">返回</a>
+					<input type="submit" class="btn btn-danger" value="修改" />
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+
+@section script{
+	<script>
+		$(function() {
+			$('#btn_reset').click(function() {
+				$('#img').attr('src', '/img/head_img.png');
+				$('#HeadPortrait').val('/img/head_img.png');
+			})
+		})
+	</script>
+}

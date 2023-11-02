@@ -1,0 +1,76 @@
+#sch_bottom{
+	width: 100%;
+	height: 500px;
+	background-color: #FAEBD7;
+}
+#sch_bottom a:hover{
+	color: red;
+}
+#sch_bottom_text{
+	font-size: 35px;
+	font-family: "黑体";
+	color: #B22222;
+	position: relative;
+	left: 300px;
+	top:80px;
+	width:330px;
+	height: 150px;
+	
+}
+#sch_bottom_div{
+	background-color: white;
+	width:600px;
+	height:260px;
+	position: relative;
+	left: 150px;
+}
+#sch_bottom_div_text{
+	position: relative;
+	left: 50px;
+	top: 30px;
+}
+#sch_bottom_div_text2{
+	position: relative;
+	left: 50px;
+	top: 60px;
+}
+#sch_bottom_div_text3{
+	position: relative;
+	left: 50px;
+	top: 90px;
+}
+#sch_bottom_div hr{
+	height: 5px;
+	background-color: #E54B4B;
+	position: relative;
+	top: 130px;
+}
+#sch_bottom_divv{
+	background-color: white;
+	width:600px;
+	height:260px;
+	position: relative;
+	left: 830px;
+	top: -258PX;
+}
+#sch_bottom_div_textv{
+	position: relative;
+	left: 50px;
+	top: 30px;
+}
+#sch_bottom_div_textv1{
+	position: relative;
+	left: 50px;
+	top: 60px;
+}
+#sch_bottom_div_textv2{
+	position: relative;
+	left: 50px;
+	top: 90px;
+}
+#sch_bottom_divv hr{
+	height: 5px;
+	background-color: #E54B4B;
+	position: relative;
+	top: 130px;
+}

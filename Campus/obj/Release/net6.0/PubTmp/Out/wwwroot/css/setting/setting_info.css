@@ -1,0 +1,35 @@
+﻿.form td {
+    padding: 8px 0px;
+}
+
+.form tr td:first-child {
+    text-align: right;
+}
+
+.form textarea {
+    padding: 3px;
+    color: black;
+    width: 98%;
+    height: 60px;
+    resize: none;
+    font-size: 1.05rem;
+    border: 1px solid #666699;
+    border-radius: 5px;
+}
+
+.form tr:last-child td {
+    border-top: 1px solid #666699;
+    text-align: center;
+}
+
+.form tr:last-child input {
+    background-color: #666699;
+    padding: 8px 30px;
+    border: 0px;
+    border-radius: 5px;
+    color: white;
+}
+
+#username {
+    color: gray;
+}

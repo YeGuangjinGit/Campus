@@ -1,0 +1,56 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+#complains_Body{
+	width: 100%;
+}
+#complains_Head{
+	width: 100%;
+	height: 50px;
+	color: black;
+	font-size: 20px;
+	padding-left: 50px;
+	padding-top: 20px;
+}
+.complains{
+	width: 100%;
+	border: 1px solid lightgray;
+	height: 110px;
+}
+.complains div{
+	margin-top: 10px;
+}
+.complains_BT{
+	font-size: 25px;
+	width: 70%;
+	padding-left: 50px;
+}
+.complains_NR{
+	width: 80%;
+	color: gray;
+	padding-left: 50px;
+}
+.complains_R{
+	width: 50%;
+	color: gray;
+	padding-left: 50px;
+}
+.complains_R img{
+	width: 20px;
+	height: 20px;
+}
+.complains_Button{
+	width: 100px;
+	height: 30px;
+	color: white;
+	text-align: center;
+	line-height: 30px;
+	cursor: alias;
+	background-color: #666699;
+	border-radius: 2px;
+	font-size: 13px;
+	position: relative;
+	top: -80px;
+	left: 85%;
+}

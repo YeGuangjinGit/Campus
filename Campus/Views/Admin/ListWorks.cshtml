@@ -1,0 +1,49 @@
+﻿@model IPagedList<Works>
+@{
+	ViewBag.Title = "文章列表";
+}
+@section style{
+	<style>
+		table {width: 100%;}
+		td {text-align: center}
+	</style>
+}
+	<div class="container-fluid">
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<h4>文章管理</h4>
+				<table border="1" style="border-spacing:0px">
+					<tr>
+						<td>文章ID</td>
+						<td>发布账号</td>
+						<td>分栏</td>
+						<td>标题</td>
+						<td>发布时间</td>
+						<td>点赞</td>
+						<td>收藏</td>
+						<td>浏览</td>
+						<td>操作</td>
+					</tr>
+					@foreach (var works in Model)
+				{
+					<tr>
+						<td>@works.WorksId</td>
+						<td>@works.User.UserName</td>
+						<td>@works.SpecialColumn.SpecialColumnValue</td>
+						<td>@works.Title</td>
+						<td>@works.ReleaseTime</td>
+						<td>@works.Fabulous.Count</td>
+						<td>@works.Collections.Count</td>
+						<td>@works.Browse</td>
+						<td>
+							<a asp-action="EditWorks" asp-route-id="@works.WorksId">编辑</a>
+						</td>
+					</tr>
+				}
+			</table>
+			<div>
+				每页 @Model.PageSize 条记录，本页有 @Model.Count 条记录,共有 @Model.TotalItemCount 条记录。第 @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) 页，共 @Model.PageCount 页。
+				@Html.PagedListPager(Model, page => Url.Action("ListWorks", new { page }))
+			</div>
+		</div>
+	</div>

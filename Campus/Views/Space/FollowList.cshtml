@@ -1,0 +1,79 @@
+﻿@using Campus.Models
+@model IEnumerable<dynamic>
+@inject UserManager<AppUser> _userManager
+@section style{
+    <link rel="stylesheet" href="~/css/concern.css">
+}
+    <div id="concern_body">
+        <div id="concern_body_left">
+            <div id="concern_body_left_head">
+                我的关注
+            </div>
+            <div id="concern_body_left_all">
+                <img src="~/img/concare.png" alt="">全部关注
+            </div>
+            <br>
+            <hr>
+            <div id="concern_body_left_head1">
+                我的粉丝
+            </div>
+            <div id="concern_body_left_all1">
+                <img src="~/img/concare.png" alt="">全部粉丝
+            </div>
+        </div>
+        <div id="concern_body_right">
+            <div id="concern_body_right_head">
+                <div id="concern_body_right_head_font">
+                    @ViewBag.title
+                </div>
+                <div id="concern_body_right_head_find">
+                    <input type="text" class="search" placeholder="搜索"><input type="submit" class="btn" value="" />
+                </div>
+            </div>
+            <br>
+            <hr>
+            @foreach (var item in Model)
+        {
+            <div class="concern">
+                <img src="@item.HeadPortrait">
+                <div class="concern_name">
+                    @item.Nickname
+                </div>
+                <div class="concern_signature">
+                    @item.PersonalSignature
+                </div>
+                <div class="concern_button">
+                    @{
+                        var id = Context.Request.QueryString.ToString().Substring(4);
+                        var m = await _userManager.GetUserAsync(User);
+                    }
+                    @if (id==m.Id) { 
+                    <input type="button" class="button" value="已关注" onclick="Follow('@item.Id',this)" />
+                    }
+                </div>
+            </div>
+        }
+
+    </div>
+</div>
+@section script{
+    <script>
+        function Follow(tid,o) {
+            $.ajax({
+                url: "/space/FollowListBtn?id=" + tid,
+                data: {
+
+                },
+                success: function(res) {
+                    var test = $(o).val();
+                    if (test == "已关注") {
+                        $(o).val("关注");
+                    } else {
+                        $(o).val("已关注");
+                    }
+                }
+            })
+        }
+
+    </script>
+}

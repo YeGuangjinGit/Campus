@@ -1,0 +1,49 @@
+﻿@section style{
+    <link rel="stylesheet" href="~/css/collections.css">
+}
+
+@model IEnumerable<Campus.Models.Collection>
+<div id="collection_Body">
+	<div id="collection_Head">
+				全部收藏
+			</div>
+@foreach (var item in Model)
+	{
+			<div class="collection">
+				<div class="collection_BT">
+					@(item.Works.Title.Length <=20?item.Works.Title:item.Works.Title.Substring(0,20)+"...")
+				</div>
+				<div class="collection_NR">
+					@(item.Works.DisplayContent.Length <=40?item.Works.DisplayContent:item.Works.DisplayContent.Substring(0,40)+"...")
+				</div>
+				<div class="collection_R">
+					<span><img src="@item.Works.User.HeadPortrait">@item.Works.User.Nickname</span>	
+				</div>
+				<div class="collection_Button" >
+					<input type="button" value="取消收藏" onclick="CollectionBtn(@item.WorksId,this)" >	
+				</div>
+			</div>
+	}
+		</div>
+
+		@section script{
+    <script>
+        function CollectionBtn(work,o) {
+            $.ajax({
+                url: "/platform/CollectionBtn?id=" + work,
+                data: {
+					
+                },
+                success: function(res) {
+                    var test = $(o).val();
+                    if (test == "取消收藏") {
+                        $(o).val("收藏");
+                    } else {
+                        $(o).val("取消收藏");
+                    }  
+                }
+            })
+        }
+
+    </script>
+}

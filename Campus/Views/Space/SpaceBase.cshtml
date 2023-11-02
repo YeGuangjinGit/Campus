@@ -1,0 +1,160 @@
+﻿@model SpaceViewModel
+@{
+	Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" asp-append-version="true" href="~/css/space/space_base.css">
+	<title>@ViewBag.Title</title>
+</head>
+<body>
+	<div id="pc-body">
+		<div class="pc-top">
+			<div class="pc-xinxi">
+				<div class="px-left">
+					<div class="pc-tx">
+						<img src="@Model.HeadPortrait" asp-append-version id="span_img">
+					</div>
+					<div class="pc-info">
+						<div class="pc-name">
+							<span class="user_name">@Model.Nickname</span>
+							<span class="pc-sex">
+								@if (Model.Gender == "女")
+								{
+									<img asp-append-version src="~/img/SpaceBase/sex-g.png" style="height: 20px;width:20px;">
+								}
+								else if (Model.Gender == "男")
+								{
+									<img asp-append-version src="~/img/SpaceBase/sex-b.png" style="height: 20px;width:20px;">
+								}
+								else
+								{
+									<img asp-append-version src="~/img/SpaceBase/sex-secret.png" style="height: 20px;width:20px;">
+								}
+							</span>
+							<span class="pc-identity">@Model.Role</span>
+						</div>
+						<div class="pc-qianming">
+							<input id="qm_txt" type="text" placeholder="编辑个性签名"
+								   value="@Model.PersonalSignature" maxlength="160" class="qm_css">
+						</div>
+					</div>
+				</div>
+				<div class="px-right">
+					<span class="goto-changes"
+						  style="border-bottom-left-radius: 20px;border-top-left-radius: 20px;">
+						<img src="~/img/SpaceBase/changes.png" asp-append-version>
+						<p>修改资料</p>
+					</span>
+					<span class="return">
+						<img src="~/img/SpaceBase/campus.png" asp-append-version>
+						<p>返回主页</p>
+					</span>
+				</div>
+			</div>
+		</div>
+		<div class="pc-middle">
+			<div class="pc-title">
+				<div class="title">
+					<span id="changes_span1"><img src="~/img/SpaceBase/tiezi.png" asp-append-version style="height:25px ;width: 37px;">我的帖子</span>
+					<span id="changes_span2"><img src="~/img/SpaceBase/acion.png" asp-append-version style="height:30px ;width: 30px;">我的活动</span>
+					<span id="changes_span3"><img src="~/img/SpaceBase/shoucang.png" asp-append-version style="height:25px ;width:25px;">收藏</span>
+					<span id="changes_span4"><img src="~/img/SpaceBase/yijianxiang.png" asp-append-version style="height:25px ;width: 25px;">意见箱</span>
+				</div>
+				<div class="good">
+					<span class="pc-goods"><span>关注</span><span>@Model.FollowsCount</span></span>
+					<span class="pc-fans"><span>粉丝</span><span>@Model.TargetsCount</span></span>
+				</div>
+			</div>
+		</div>
+		<div class="pc-foot"></div>
+	</div>
+	<script src="~/lib/jquery/jquery-3.3.1.min.js" asp-append-version="true"></script>
+	<script>
+		// 默认加载列表
+		$.ajax({
+			url: "/space/myposts?id=@ViewBag.Id",
+			async: true,
+			data: "",
+			success: function(res) {
+				$(".pc-foot").html(res);
+			}
+		})
+		$('#changes_span1').click(function() {
+			$.ajax({
+				url: "/space/myposts?id=@ViewBag.Id",
+				async: true,
+				data: "",
+				success: function(res) {
+					$(".pc-foot").html(res);
+				}
+			})
+		})
+		$('#changes_MyPosts').click(function() {
+			$.ajax({
+				url: "/space/myposts?id=@ViewBag.Id",
+				async: true,
+				data: "",
+				success: function(res) {
+					$(".pc-foot").html(res);
+				}
+			})
+		})
+		$('.pc-goods').click(function() {
+			$.ajax({
+				url: "/space/FollowList?id=@ViewBag.Id",
+				async: true,
+				data: "",
+				success: function(res) {
+					$(".pc-foot").html(res);
+				}
+			})
+		})
+		$('.pc-fans').click(function() {
+			$.ajax({
+				url: "/space/FansList?id=@ViewBag.Id",
+				async: true,
+				data: "",
+				success: function(res) {
+					$(".pc-foot").html(res);
+				}
+			})
+		})
+		$('#changes_span3').click(function() {
+			$.ajax({
+				url: "/platform/CollectionView?id=@ViewBag.Id",
+				async: true,
+				data: "",
+				success: function(res) {
+					$(".pc-foot").html(res);
+				}
+			})
+		})
+		$('#changes_span4').click(function() {
+			$.ajax({
+				url: "/space/ComplainsList?id=@ViewBag.Id",
+				async: true,
+				data: "",
+				success: function(res) {
+					$(".pc-foot").html(res);
+				}
+			})
+		})
+		$('.goto-changes').click(function() {
+			window.location = "/space/setting/info";
+		})
+		$('.pc-tx').click(function() {
+			window.location = "/space/setting/face";
+		})
+		$('.return').click(function() {
+			window.location = "/home/index";
+		})
+	</script>
+</body>
+</html>

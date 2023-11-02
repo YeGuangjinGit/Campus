@@ -1,0 +1,231 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    text-decoration: none;
+}
+
+#School_Head {
+    width: 100%;
+    height: 45px;
+    background-color: #023ba4;
+}
+
+#School_Head_ul {
+    float: left;
+}
+
+    #School_Head_ul ul {
+        margin-left: 30px;
+    }
+
+        #School_Head_ul ul li {
+            float: left;
+            margin-left: 25px;
+            line-height: 45px;
+            color: white;
+        }
+
+#School_Head_people {
+    float: right;
+    margin-right: 100px;
+}
+
+#School_Head_ul ul li a {
+    color: white;
+}
+
+#School_Head_people ul li {
+    float: left;
+    margin-left: 25px;
+    line-height: 45px;
+    color: white;
+}
+
+    #School_Head_people ul li a {
+        color: white;
+    }
+
+#School_DaoHang {
+    width: 100%;
+    height: 800px;
+    background-image: url(../img/logo1.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-color:;
+}
+
+    #School_DaoHang div {
+        float: left;
+    }
+
+#Sch_dh_Pic {
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(to top,transparent,#8e97c0);
+    opacity: 1.0;
+}
+
+    #Sch_dh_Pic img {
+        width: 200px;
+        height: 90px;
+        opacity: 1.0;
+        float: left;
+    }
+
+@font-face {
+    /* font-properties */
+
+    font-family: "草檀斋毛泽东";
+    src: url("../font/tff/草檀斋毛泽东.ttf");
+    url(‘pictos/pictos-web.ttf’), url(‘pictos/pictos-web.eot’); /* IE9 */
+}
+
+
+#School_DaoHang_wz {
+    font-size: 30px;
+    color: white;
+    font-family: "草檀斋毛泽东";
+    line-height: 80px;
+    margin-left: 150px;
+}
+
+#School_DaoHang_i i {
+    color: white;
+    font-size: 100px;
+}
+
+#School_DaoHang_ul ul {
+    margin-left: 70px;
+}
+
+    #School_DaoHang_ul ul li {
+        float: left;
+        margin-left: 100px;
+        line-height: 80px;
+    }
+
+        #School_DaoHang_ul ul li a {
+            color: white;
+            font-size: 22px;
+        }
+
+#my {
+    color: white;
+    line-height: 80px;
+    margin-left: 200px;
+    margin-top: 20px;
+}
+
+    #my img {
+        height: 40px;
+        width: 40px;
+    }
+
+#school_logo {
+    font-size: 30px;
+    color: white;
+    font-family: "草檀斋毛泽东";
+    margin-top: 500px;
+}
+
+#School_News {
+    width: 100%;
+    height: 900px;
+    background-color: antiquewhite;
+}
+
+@font-face {
+    font-family: "方正少儿简体";
+    src: url("../font/tff/方正少儿简体.ttf");
+}
+
+#School_News_BiaoTIi {
+    margin-left: 42%;
+    padding-top: 40px;
+    font-family: "方正少儿简体";
+    font-size: 50px;
+    letter-spacing: 5px;
+    display: none;
+}
+
+#School_News_img1 {
+    float: left;
+    position: relative;
+    top: 50px;
+    left: 150px;
+    display: none;
+}
+
+    #School_News_img1 img {
+        width: 600px;
+        height: 350px;
+    }
+
+#School_News_img1_text {
+    position: relative;
+    top: -25px;
+    left: 0px;
+    width: 600px;
+    background-color: #FFFFFF;
+    opacity: 0.7;
+    text-align: center;
+    display: none;
+}
+
+#School_News_img2 {
+    position: relative;
+    top: -1160px;
+    left: 810px;
+    clear: both;
+    width: 600px;
+    height: 350px;
+    display: none;
+}
+
+    #School_News_img2 img {
+        width: 600px;
+        height: 350px;
+        clear: both;
+    }
+
+#School_News_img2_text {
+    position: relative;
+    top: -25px;
+    left: 0px;
+    width: 600px;
+    background-color: #FFFFFF;
+    opacity: 0.7;
+    text-align: center;
+    clear: both;
+    display: none;
+}
+
+#School_Head {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 999
+}
+
+#Sch_dh_Pic {
+    position: fixed;
+    top: 45px;
+    left: 0px;
+    z-index: 999
+}
+
+#sch_img_ulli ul li {
+    float: left;
+    color: #000000;
+    position: relative;
+    top: 720px;
+    left: 1250px;
+    margin-left: 30px;
+    color: white;
+    width: 13px;
+    font-size: 10px;
+    height: 13px;
+    background-color: white;
+    border-radius: 100%;
+}

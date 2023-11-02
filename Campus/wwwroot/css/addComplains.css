@@ -1,0 +1,23 @@
+﻿body {
+    background-color: #f5f3f3;
+}
+
+#complains_body {
+    width: 60%;
+    border: 1px solid gray;
+    border-radius: 5px;
+    background-color: white;
+    margin: auto;
+}
+table {
+margin:auto;
+}
+    #complains_body textarea {
+        resize: none;
+        padding: 5px;
+    }
+    #complains_body input {
+        padding:5px;
+        border:1px solid gray;
+        margin: 10px auto;
+    }

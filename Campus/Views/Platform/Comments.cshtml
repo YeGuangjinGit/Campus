@@ -1,0 +1,62 @@
+﻿@model CommentViewModel
+
+<div id="post_PL_head">
+            @Model.Comments.Count()评论
+        </div>
+        <div id="post_PL_NR">
+            <span><img src="@Model.HeadPortrait" asp-append-version></span><span>
+                <textarea cols="90" rows="4"
+                      class="text"></textarea>
+            </span><span><input type="button" id="button" value="提交评论" onclick="submitComment(@Model.WorksId)"></span>
+        </div>
+
+        @foreach (var comment in Model.Comments)
+        {
+            <div class="post_PL_PLNR">
+                <div>
+                    <img src="@comment.User.HeadPortrait" asp-append-version>
+                    <div>
+                        <div class="post_PL_PLNR_name">@comment.User.Nickname</div>
+                        <div class="post_PL_PLNR_nr">@comment.Content</div>
+                        <div class="post_PL_PLNR_nr">
+                            <span>@comment.ReleaseTime</span>&nbsp;&nbsp;&nbsp;
+                            <span>点赞(@comment.Like)</span>&nbsp;&nbsp;&nbsp;
+                            <span class="speak_back">回复 @comment.Comments.Count()</span>&nbsp;&nbsp;&nbsp;<span>举报</span>
+                        </div>
+                        <div>
+                            <div id="post_PL_NR1">
+                                <span><img src="@Model.HeadPortrait" asp-append-version></span>
+                                <span  class="textarea">
+                                    <textarea name="" id="" cols="80" rows="3"
+                                      class="text2"></textarea>
+                                </span><span>
+                                <input type="button" id="button2" value="提交评论" onclick="sencoud_submitComment(@comment.CommentId,@Model.WorksId,this)">
+                                </span>
+                            </div>
+                            @foreach (var secondComment in comment.Comments)
+                            {
+                                <div class="second_comment">
+                                    <img src="@secondComment.User.HeadPortrait" alt="">
+                                    <div>
+                                        <div class="post_PL_PLNR_name">@secondComment.User.Nickname</div>
+                                        <div class="post_PL_PLNR_nr">@secondComment.Content</div>
+                                        <div class="post_PL_PLNR_nr">
+                                            <span>@secondComment.ReleaseTime</span>&nbsp;&nbsp;&nbsp;<span>点赞(@secondComment.Like)</span>&nbsp;&nbsp;&nbsp;<span>举报</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        @section script{
+            <script src="~/lib/read.js"></script>
+            <script type="text/javascript" src="~/lib/qrcode.min.js" asp-append-version="true"></script>
+            <script>
+                $('.speak_back').click(function () {
+	$(this).parent().siblings('div:last-child').toggle()
+})
+            </script>
+        }

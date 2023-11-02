@@ -1,0 +1,168 @@
+*{
+	margin: 0px;
+	padding: 0px;
+	text-decoration: none;
+	list-style: none;
+}
+#post_DaoHang{
+	width: 80%;
+	height: 140px;
+	background-image: url(../post_img/dh_logo2.png);
+	background-position:right;
+	background-color: black;
+	margin: auto;
+}
+#post_dh_sousuo{
+	width:500px;
+	height:100px;
+	position: relative;
+	left: 400px;
+	top:40px;
+}
+#post_dh_sousuo_txt{
+	width:350px;
+	height: 30px;
+	font-size: 20px;
+	font-family: "宋体";
+}
+#post_dh_sousuo_button{
+	width: 80px;
+	height: 35px;
+	position: relative;
+	top: -1px;
+}
+#School_Head{
+	width:100%;
+	height:45px;
+	background-color: #666699;
+	
+}
+#School_Head_ul{
+	float:left;
+}
+#School_Head_ul ul{
+	margin-left: 30px;
+}
+#School_Head_ul ul li{
+	float:left;
+	margin-left: 25px;
+	line-height: 45px;
+	color: white;
+	
+}
+#School_Head_people{
+	float:right;
+	margin-right: 100px;
+}
+#School_Head_ul ul li a{
+	color:white;
+}
+#School_Head_people ul li {
+	float:left;
+	margin-left: 25px;
+	line-height: 45px;
+	color: white;
+}
+#School_Head_people ul li a{
+	color:white;
+}
+#post_ul{
+	width:200px;
+	height: 50px;
+}
+#post_ul ul li{
+	width: 20px;
+	height: 20px;
+	border-radius: 100%;
+	background-color: white;
+	float: left;
+	margin-left: 30px;
+	position: relative;
+	left: 980px;
+	
+}
+@font-face { 
+	/* font-properties */ 
+
+	font-family: "草檀斋毛泽东";
+	src: url("../tff/草檀斋毛泽东.ttf");
+	url(‘pictos/pictos-web.ttf’), 
+	url(‘pictos/pictos-web.eot’); /* IE9 */ 
+} 
+#shanghua{
+	width: 50px;
+	height: 50px;
+	background-color: #023ba4;
+	position: relative;
+	top: -60px;
+}
+#xiahua{
+	width: 40px;
+	height: 30px;
+	background-color: #023ba4;
+}
+#Sch_dh_Pic{
+	width:100%;
+	height:50px;
+    background-color: white;
+	opacity: 1.0;
+	display: none;
+}
+#Sch_dh_Pic img{
+	width: 200px;
+	height:90px;
+	opacity: 1.0;
+	float: left;
+}
+#School_DaoHang_wz{
+	font-size: 20px;
+	color:black;
+	font-family: "草檀斋毛泽东";
+	position: relative;
+	left: 50px;
+	width: 20%;
+}
+#School_DaoHang_wz img{
+	position: relative;
+	top: 5px;
+}
+#School_DaoHang_ul{
+	position: relative;
+	left: 450px;
+	top: 12px;
+	width: 700px;
+}
+#School_DaoHang_ul ul{
+	
+}
+#School_DaoHang_ul ul li{
+	float: left;
+	margin-left: 50px;
+}
+#School_DaoHang_ul ul li a{
+	color: black;
+	font-size: 20px;
+	font-family: "宋体";
+}
+#post_ZL{
+	width: 100%;
+	height: 300px;
+	background-image: url("../post_img/News_logo.png");
+	background-position: center;
+	display: none;
+}
+#post_ZL_ul{
+	width: 100%;
+	background-color: #666699;
+	background-repeat: no-repeat;
+}
+#post_ZL_ul ul li{
+	height: 50px;
+	text-align: center;
+	line-height: 50px;
+	color: aliceblue;
+}
+#post_ZL_ul ul li:hover{
+	background-color: aliceblue;
+	color: #023ba4;
+}

@@ -1,0 +1,78 @@
+﻿@model CampusWorldViewModel
+@{
+	ViewBag.Title = "校园天地";
+}
+@section style{
+	<link rel="stylesheet" href="~/css/campusWorld/post.css" asp-append-version="true">
+	<link rel="stylesheet" href="~/css/campusWorld/wz.css" asp-append-version="true">
+	<link rel="stylesheet" href="~/css/campusWorld/shipin.css" asp-append-version="true">
+}
+	<div id="post_wz">
+		<div class="post_left">
+			<div class="post_left_head">
+				专栏
+			</div>
+			<div class="post_left_mk">
+				<div id="post_ZL_ul">
+					<ul>
+						@foreach (var specialColumn in Model.specialColumns)
+					{
+						<li><a asp-action="CampusWorld" asp-route-specialColumnValue="@specialColumn.SpecialColumnValue">@specialColumn.SpecialColumnValue</a></li>
+					}
+				</ul>
+			</div>
+			<div id="post_left_mk_d1">
+				<ul>
+					<a asp-action="Upload" asp-controller="platform">
+					<li>投稿管理</li></a>
+					<a asp-action="Index">
+					<li><img src="~/img/post_img/zhuye.png" alt="">返回主页</li></a>
+
+					<li id="Space"><img src="~/img/post_img/personal-center.png">个人中心</li>
+				</ul>
+			</div>
+		</div>
+
+	</div>
+	<div class="post_center">
+		<div class="post_center_head">
+			@ViewBag.Tip
+			<div class="bar1">
+				<input type="text" class="search" placeholder="搜索"><input type="submit" class="btn" value="" />
+			</div>
+		</div>
+		@foreach (var works in Model.Works)
+		{
+			<a asp-action="Read" asp-controller="Platform" asp-route-id="@works.WorksId">
+				<div class="post_center_nrr">
+					<div class="post_center_nrr_bt">@works.Title</div>
+					<div class="post_center_nrr_nr">
+						@(works.DisplayContent.Length<=97?works.DisplayContent:works.DisplayContent.Substring(0,97))
+					</div>
+					<div class="post_center_nrr_img">
+						<div><span><img src="@works.User.HeadPortrait" asp-append-version></span><span>@works.User.Nickname</span></div>
+						<div style="margin-left: 30px;"><span><img src="~/img/post_img/look_1.png" alt=""></span><span>@works.Browse</span></div>
+						<div style="margin-left: 30px;"><span><img src="~/img/post_img/goods_1.png" alt=""></span><span>@works.Fabulous.Count</span></div>
+						<div style="margin-left: 30px;"><span><img src="~/img/post_img/comment.png" alt=""></span><span>@works.Comments.Count</span></div>
+					</div>
+				</div>
+			</a>
+		}
+	</div>
+	<div class="post_right">
+		<div class="post_right_head">
+			排行
+		</div>
+		<div class="post_right_cc">
+			<ul>
+				@foreach (var works in Model.Top10Works)
+				{
+					<li>·<a asp-action="Read" asp-controller="Platform" asp-route-id="@works.WorksId">@(works.Title.Length <=7?works.Title:works.Title.Substring(0,7)+"...")</a></li>
+				}
+			</ul>
+		</div>
+	</div>
+</div>
+@section script{
+	<script src="~/lib/setting/setting.js"></script>
+}

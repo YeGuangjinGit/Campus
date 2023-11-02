@@ -1,0 +1,26 @@
+﻿@model Campus.Models.Opinion
+@section style{
+    <link rel="stylesheet" href="~/css/opinion.css">
+}
+    <div id="opinion_body">
+        <div><span>标题：</span>@Model.OpinionTitle</div>
+        <div><span>意见内容:</span>@Model.OpinionContent</div>
+        <div><span>提交时间:</span>@Model.ReleaseTime</div>
+        @if (@Model.Handle == null)
+    {
+        <div><span>处理人:</span>暂未处理</div>
+    }
+    else
+    {
+        <div><span>处理人:</span>@Model.Handle?.Nickname</div>
+        <div><span>处理结果:</span>@Model.Result</div>
+    }
+    <div id="back" style="position:relative;left:300px;width:50px">返回</div>
+</div>
+@section script{
+    <script>
+$("#back").click(function() { 
+window.history.go(-1)
+})
+    </script>
+}

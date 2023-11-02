@@ -1,0 +1,24 @@
+﻿@using Campus.Models
+@model IEnumerable<dynamic>
+@{
+	Layout = null;
+}
+
+<link rel="stylesheet" asp-append-version="true" href="~/css/space/my_posts.css">
+
+<div class="pc-connect">
+	@foreach (var works in Model)
+	{
+		<div class="neirong">
+			<a asp-action="Read" asp-controller="Platform" asp-route-id="@works.WorksId">@(works.Title.Length <=20?works.Title:works.Title.Substring(0,20)+"...")</a>
+			<div class="time-dianzan">
+				<div class="one">
+					<div>👍<span>@works.FabulousCount</span></div>
+					<div>⭐<span>@works.CollectionsCount</span></div>
+					<div>👀<span>@works.Browse</span></div>
+				</div>
+				<div class="two">--@works.ReleaseTime--</div>
+			</div>
+		</div>
+	}
+</div>

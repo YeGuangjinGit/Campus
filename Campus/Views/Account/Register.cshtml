@@ -1,0 +1,51 @@
+﻿@model RegisterViewModel
+@{
+	ViewBag.Title = "校园之家-注册";
+}
+@section style {
+	<link rel="stylesheet" href="~/css/style_denglu.css" />
+		<!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+		  integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+
+}
+	<section>
+		<div class="container">
+			<div class="user signupBx">
+				<div class="formBx">
+					<h2>Create an account</h2>
+					<form method="post">
+						<input asp-for="UserName" placeholder="Username">
+						<span asp-validation-for="UserName" class="text-danger"></span>
+						<input asp-for="Email" placeholder="Email">
+						<span asp-validation-for="Email" class="text-danger"></span>
+						<input asp-for="Password" placeholder="Password">
+						<span asp-validation-for="Password" class="text-danger"></span>
+						<input asp-for="ConfirmPassword" placeholder="ConfirmPassword">
+						<span asp-validation-for="ConfirmPassword" class="text-danger"></span><br />
+						<input type="submit"  value="注册"><br /><a asp-action="ActivateUserEmail">激活邮箱</a>
+						@*<div asp-validation-summary="All"></div>*@
+						<a asp-controller="Account" asp-action="Login">回到登陆</a>
+					</form>
+				</div>
+				<div class="imgBx">
+					<img src="~/img/dl-img2.jpg">
+				</div>
+			</div>
+		</div>
+	</section>
+
+	@section script{
+	<script src="~/lib/jquery/jquery.validate.min.js"></script>
+	<script src="~/lib/jquery/jquery.validate.unobtrusive.min.js"></script>	
+	<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
+			integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
+			crossorigin="anonymous"></script>
+	}
+
+
+	<script>
+		document.querySelector('.container').classList.toggle('active');
+		document.querySelector('section').classList.toggle('active');
+	</script>

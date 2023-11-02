@@ -1,0 +1,23 @@
+﻿@model CommentViewModel
+    <div id="post_PL_NR1">
+        <span><img src="@Model.HeadPortrait" asp-append-version></span>
+        <span class="textarea">
+            <textarea name="" id="" cols="80" rows="3"
+                      class="text2"></textarea>
+        </span><span>
+            <input type="button" id="button2" value="提交评论" onclick="sencoud_submitComment(@Model.Parentid,@Model.WorksId,this)">
+        </span>
+    </div>
+    @foreach (var secondComment in Model.Comments)
+    {
+        <div class="second_comment">
+            <img src="@secondComment.User.HeadPortrait" alt="">
+            <div>
+                <div class="post_PL_PLNR_name">@secondComment.User.Nickname</div>
+                <div class="post_PL_PLNR_nr">@secondComment.Content</div>
+                <div class="post_PL_PLNR_nr">
+                    <span>@secondComment.ReleaseTime</span>&nbsp;&nbsp;&nbsp;<span>点赞(@secondComment.Like)</span>&nbsp;&nbsp;&nbsp;<span>举报</span>
+                </div>
+            </div>
+        </div>
+    }

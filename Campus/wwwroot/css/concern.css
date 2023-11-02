@@ -1,0 +1,157 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+#concern_body{
+	width: 100%;
+	display: flex;
+}
+#concern_body_left{
+	flex: 1.5;
+}
+#concern_body_right{
+	flex: 8.5;
+}
+#concern_body_left_head{
+	width: 100%;
+	height: 40px;
+	font-size: 16px;
+	color: gray;
+	padding-left: 10px;
+	padding-top: 20px;
+}
+#concern_body_left_all{
+	width: 99%;
+	font-size: 18px;
+	padding-left: 5px;
+	height: 40px;
+	line-height: 40px;
+}
+#concern_body_left_all img{
+	width: 20px;
+	height: 20px;
+	position: relative;
+	top: 3px;
+}
+
+#concern_body_left_head1{
+	width: 100%;
+	height: 40px;
+	font-size: 16px;
+	color: gray;
+	padding-left: 10px;
+	padding-top: 20px;
+}
+#concern_body_left_all1{
+	width: 98%;
+	font-size: 18px;
+	padding-left: 5px;
+	height: 40px;
+	line-height: 40px;
+}
+#concern_body_left_all1 img{
+	width: 20px;
+	height: 20px;
+	position: relative;
+	top: 3px;
+}
+#concern_body_left_all1:hover{
+	background-color: #6699CC;
+	color: white;	
+}
+#concern_body_right_head{
+	width: 100%;
+	height: 60px;
+	display: flex;
+}
+#concern_body_right_head_font{
+	flex: 1;
+	font-size: 20px;
+	padding-left: 20px;
+	padding-top: 20px;
+}
+#concern_body_right_head_find{
+	flex: 1;
+	padding-top: 10px;
+}
+.search {
+    width: 300px;
+    height: 30px;
+    border-radius: 18px;
+    outline: none;
+    border: 1px solid #ccc;
+	padding-left:15px;
+}
+.btn {
+    height: 30px;
+    width: 30px;
+    background: url("../img/find.png") no-repeat;
+	background-size: 100% 100%;
+	position: relative;
+	left: -40px;
+	top: 10px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+.concern{
+	width: 100%;
+	height: 100px;
+	border-bottom: 1px solid gray;
+	margin-top: 5px;
+}
+.concern img{
+	width: 65px;
+	height: 65px;
+	border-radius: 100%;
+	position: relative;
+	top:10px;
+	left: 20px;
+	border: 5px solid lightcyan;
+}
+.concern_name{
+	width: 300px;
+	height: 100%;
+	position: relative;
+	top: -105px;
+	left: 100px;
+	font-size: 20px;
+	line-height: 100px;
+}
+.concern_button{
+	width: 200px;
+	height: 100%;
+	position: relative;
+	top: -185px;
+	left: 950px;
+}
+.button{
+	color: black;
+	font-size: "宋体";
+	font-size: 15px;
+	border: 1px solid lightgray;
+	background-color: lightgray	;
+	width: 100px;
+	height: 30px;
+	position: relative;
+	top: 15px;
+	left:-100px;
+}
+.button1{
+	color: black;
+	font-size: "宋体";
+	font-size: 15px;
+	border: 1px solid lightgray;
+	background-color: lightgray	;
+	width: 100px;
+	height: 30px;
+	position: relative;
+	top: 15px;
+	left:-100px;
+	display: none;
+}
+.concern_signature{
+	position: relative;
+	top: -125px;
+	left: 100px;
+}

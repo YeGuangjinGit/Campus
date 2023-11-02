@@ -1,0 +1,256 @@
+﻿@using Campus.Models
+@model PlatformReadViewModel
+@inject SignInManager<AppUser> _signInMamager
+@inject UserManager<AppUser> _userManager
+
+@{
+    ViewBag.Title = "文章详情";
+    var isSignIn = _signInMamager.IsSignedIn(User);
+    AppUser user = null;
+    if (isSignIn) user = await _userManager.GetUserAsync(User);
+}
+@section style{
+    <link rel="stylesheet" asp-append-version="true" href="~/css/shoolps.css">
+    <style type="text/css">
+        #ad {
+            width: 278px;
+            height: 188px;
+            position: fixed;
+            right: 0px;
+            bottom: 0px;
+            background: url(img/ad.jpg) no-repeat;
+            display: none;
+        }
+
+            #ad span {
+                font-size: 20px;
+                cursor: pointer;
+            }
+    </style>
+}
+    <div id="School_Head">
+        <div id="School_Head_ul">
+            <ul>
+                <li><a href="#">校园简介</a></li>
+                <li>|</li>
+                <li><a asp-action="CampusWorld" asp-controller="Home">校园天地</a></li>
+                <li>|</li>
+                <li><a href="#">校园风景</a></li>
+                <li>|</li>
+                <li><a href="#">国家新闻</a></li>
+                <li>|</li>
+                <li><a href="#">学生论坛</a></li>
+            </ul>
+        </div>
+        <div id="School_Head_people">
+            <ul>
+                <li><a href="#">意见箱</a></li>
+            </ul>
+        </div>
+    </div>
+    <div id="sch_Post_head"><span>@Model.SpecialColumnValue</span><span>/</span><span>@Model.Title</span></div>
+    <div id="good">
+        @if (isSignIn)
+    {
+        
+        @if (Model.GoodButton)
+            {
+                <div id="good1" ><img src="~/img/good_2.png" class="good1" asp-append-version onclick="SubmitFabulous(@Model.WorksId)"/></div>
+            }
+            else
+            {
+                <div id="good1" ><img src="~/img/good_1.png" class="good1" asp-append-version onclick="SubmitFabulous(@Model.WorksId)"/></div>
+            }
+        
+        
+            @if (Model.CollectionButton)
+            {
+                <div id="good2" ><img src="~/img/mine_2.png" class="good2" asp-append-version onclick="SubmitCollection(@Model.WorksId)"/></div>
+            }
+            else
+            {
+                <div id="good2" ><img src="~/img/mine_1.png" class="good2" asp-append-version onclick="SubmitCollection(@Model.WorksId)"/></div>
+
+            }
+       
+    }
+    <div id="good3"><img src="~/img/gouse_2.png" class="good3" /></div>
+    <a asp-action="index" asp-controller="Home"><div id="good4"><img src="~/img/index_2.png" style="width:35px;height:35px" /></div></a>
+</div>
+<div id="Post_first">
+    <div id="Post_first_head">
+        <div id="Post_first_head_BT">
+            @Model.Title
+            <div id="post_first_div1">
+                <span>@Model.SpecialColumnValue</span>
+                <span>时间：@Model.ReleaseTime</span>
+                <span>@Model.Browse 阅读</span>
+                <span>@Model.FabulousNum 点赞</span>
+                <span>@Model.Comments.Count() 评论</span>
+            </div>
+        </div>
+        <div id="post_sch_people">
+            <a href="/space/@Model.User.Id">
+                <img src="@Model.User.HeadPortrait" asp-append-version>
+            </a>
+            <span>@Model.Nickname</span>
+            <p><span>粉丝：</span><span>@Model.TargetsNum</span></p>
+
+            @if (Model.FollowButton)
+            {
+                <div id="post_guanzhu">+关注</div>
+            }
+        </div>
+    </div>
+    <div id="post_center">
+        <div id="post_center_NR">
+            <div id="post_center_NR_wz">
+                @Html.Raw(Model.Content)
+            </div>
+            <div id=""><a asp-action="AddComplains" asp-controller="Home" asp-route-id="@Model.WorksId">举报</a></div>
+        </div>
+    </div>
+
+</div>
+@if (isSignIn)
+{
+    <div id="post_PL">
+        <div id="post_PL_head">
+            @Model.Comments.Count()评论
+        </div>
+        <div id="post_PL_NR">
+            <span><img src="@user.HeadPortrait" asp-append-version></span><span>
+                <textarea cols="90" rows="4"
+                      class="text"></textarea>
+            </span><span><input type="button" id="button" value="提交评论" onclick="submitComment(@Model.WorksId)"></span>
+        </div>
+
+        @foreach (var comment in Model.Comments)
+        {
+            <div class="post_PL_PLNR">
+                <div>
+                    <img src="@comment.User.HeadPortrait" asp-append-version>
+                    <div>
+                        <div class="post_PL_PLNR_name">@comment.User.Nickname</div>
+                        <div class="post_PL_PLNR_nr">@comment.Content</div>
+                        <div class="post_PL_PLNR_nr">
+                            <span>@comment.ReleaseTime</span>&nbsp;&nbsp;&nbsp;
+                            <span>点赞(@comment.Like)</span>&nbsp;&nbsp;&nbsp;
+                            <span class="speak_back">回复 @comment.Comments.Count()</span>&nbsp;&nbsp;&nbsp;<span>举报</span>
+                        </div>
+                        <div>
+                            <div id="post_PL_NR1">
+                                <span><img src="@Model.MyHeadPortrait" asp-append-version></span>
+                                <span class="textarea">
+                                    <textarea name="" id="" cols="80" rows="3"
+                                      class="text2"></textarea>
+                                </span>
+                                <span>
+                                    <input type="button" id="button2" value="提交评论" onclick="sencoud_submitComment(@comment.CommentId,@Model.WorksId,this)">
+                                </span>
+                            </div>
+                            @foreach (var secondComment in comment.Comments)
+                            {
+                                <div class="second_comment">
+                                    <img src="@secondComment.User.HeadPortrait" alt="">
+                                    <div>
+                                        <div class="post_PL_PLNR_name">@secondComment.User.Nickname</div>
+                                        <div class="post_PL_PLNR_nr">@secondComment.Content</div>
+                                        <div class="post_PL_PLNR_nr">
+                                            <span>@secondComment.ReleaseTime</span>&nbsp;&nbsp;&nbsp;<span>点赞(@secondComment.Like)</span>&nbsp;&nbsp;&nbsp;<span>举报</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+
+}
+
+<div id="ad">
+    <span>&times;</span>
+</div>
+@section script{
+    <script src="~/lib/read.js"></script>
+    <script type="text/javascript" src="~/lib/qrcode.min.js" asp-append-version="true"></script>
+    <script>
+        $(function() {
+            var qrcode = new QRCode(document.getElementById("ad"), {
+                text: window.location.href,
+                width: 128,
+                height: 128,
+                colorDark: "#f60",
+                colorLight: "#ccc",
+                correctLevel: 0 // 二维码结构复杂性 0~3
+            });
+
+            $("#good3").click(function() {
+                //弹窗广告
+                $("#ad").slideToggle(800);
+            })
+            $("#ad span").click(function() {
+                //关闭弹窗广告
+                $("#ad").slideToggle(800);
+            })
+
+            $("#post_guanzhu").click(function() {
+                $.ajax({
+                    url: "/platform/Follow",
+                    data: {
+                        id: '@Model.User.Id'
+                    },
+                    success: function(res) {
+                        $("#post_guanzhu").hide();
+                    }
+                })
+            })
+        })
+        function submitComment(wid) {
+            $.ajax({
+                url: "/platform/submitComment?id=" + wid,
+                data: { text: '' + $(".text").val() },
+                success: function(res) {
+                    $("#post_PL").html(res);
+                }
+            })
+        }
+        function sencoud_submitComment(pid, wid, o) {
+            $.ajax({
+                url: "/platform/submitComments?id=" + pid,
+                data: {
+                    text2: o.parentNode.previousElementSibling.firstElementChild.value,
+                    works: wid
+                },
+                success: function(res) {
+                    $(o).parent().parent().parent().html(res);
+                }
+            })
+        }
+        function SubmitCollection(id) {
+            $.ajax({
+                url: "/platform/SubmitCollection?id=" + id,
+                data: {
+
+                },
+                success: function(res) {
+
+                }
+            })
+        }
+        function SubmitFabulous(id) {
+            $.ajax({
+                url: "/platform/SubmitFabulous?id=" + id,
+                data: {
+
+                },
+                success: function(res) {
+
+                }
+            })
+        }
+    </script>
+}

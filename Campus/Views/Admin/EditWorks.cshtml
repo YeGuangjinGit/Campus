@@ -1,0 +1,19 @@
+﻿@model Works
+
+<div class="container-fluid">
+	<div class="panel panel-default">
+		<form method="post" asp-action="DeleteWorks">
+			<input type="hidden" asp-for="WorksId" />
+			<div class="panel-heading">@Model.Title</div>
+			<div class="panel-body">
+				@Html.Raw(Model.Content)
+				<div class="form-group" style="margin-bottom:0">
+					<div class="col-sm-offset-2 col-sm-10 text-right">
+						<a class="btn btn-default" asp-action="ListWorks">返回</a>
+						<input type="submit" class="btn btn-danger" onclick="return confirm('真的要删除吗？！')" value="删除" />
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>

@@ -1,0 +1,44 @@
+﻿@model LoginViewModel
+@{
+	ViewBag.Title = "校园之家-登录";
+}
+@section style {
+	<link rel="stylesheet" href="~/css/style_denglu.css" />
+		<!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+		  integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+}
+	<section>
+		<div class="container">
+			<div class="user signinBx">
+				<div class="imgBx">
+					<img src="~/img/dl_img.jpg">
+				</div>
+				<div class="formBx">
+					<h2>Welcome to our home</h2>
+					<form method="post">
+						<input asp-for="UserName" placeholder="UserName" />
+						<span asp-validation-for="UserName" class="text-danger"></span>
+						<input asp-for="Password" placeholder="Password" />
+						<span asp-validation-for="Password" class="text-danger"></span>
+						<div>
+							<input asp-for="RememberMe" /><span id="Reme1" style="position:relative;">记住密码</span>
+						</div>
+						<input type="submit" value="登录" id="Login"><br>
+						<div asp-validation-summary="All" style="text-align"></div>
+						<a asp-controller="Account" asp-action="ForgotPassword" style="font-size:0.8em">忘记密码？</a>
+						<a asp-controller="Account" asp-action="Register">没有账号？</a>
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	@section script{
+	<script src="~/lib/jquery/jquery.validate.min.js"></script>
+	<script src="~/lib/jquery/jquery.validate.unobtrusive.min.js"></script>
+	<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
+			integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
+			crossorigin="anonymous"></script>
+	}

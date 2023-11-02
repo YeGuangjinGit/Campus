@@ -1,0 +1,109 @@
+.pc-connect {
+    width: 100%;
+    background-color: #f3f3f6c2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.pc-foot {
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+}
+
+.neirong {
+    height: 5%;
+    width: 99.2%;
+    background-color: rgb(172, 195, 237);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 5px;
+}
+
+.neirong:hover {
+    height: 10.5%;
+    width: 100%;
+}
+
+a {
+    height: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 20px;
+    letter-spacing: 1px;
+    padding-left: 20px;
+    color: black;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.266);
+}
+
+.time-dianzan {
+    height: 40%;
+    display: flex;
+}
+
+.one,
+.two,
+.three {
+    height: 100%;
+    width: 33%;
+    cursor: pointer;
+}
+
+.one {
+    display: flex;
+    align-items: center;
+
+}
+
+.one div {
+    margin-left: 10px;
+}
+
+.two {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    color: rgb(57, 55, 55);
+    letter-spacing: 1px;
+    font-size: 12px;
+}
+
+.three {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.three-text {
+    border: 1px solid cadetblue;
+    width: 30%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    letter-spacing: 1px;
+}
+
+.three-text2 {
+    width: 100%;
+    display: flex;
+}
+
+.three-text ul {
+    font-size: 10px;
+    color: gray;
+    border: 1px solid black;
+    width: 35%;
+    text-align: center;
+    opacity: 0;
+}
+
+.three-text2 span {
+    width: 20%;
+    border: 1px solid cadetblue;
+    text-align: center;
+    cursor: pointer;
+
+}

@@ -1,0 +1,45 @@
+﻿@model IPagedList<SpecialColumn>
+@{
+	ViewBag.Title = "分栏列表";
+}
+@section style{
+	<style>
+		table {
+			width: 100%;
+		}
+
+		td {
+			text-align: center
+		}
+	</style>
+}
+	<div class="container-fluid">
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<h4><a asp-action="CreateSpecialColumn">添加分栏</a></h4>
+				<table border="1" style="border-spacing:0px">
+					<tr>
+						<td>分栏ID</td>
+						<td>分栏</td>
+						<td>文章数</td>
+						<td>操作</td>
+					</tr>
+					@foreach (var specialColumn in Model)
+				{
+					<tr>
+						<td>@specialColumn.SpecialColumnId</td>
+						<td>@specialColumn.SpecialColumnValue</td>
+						<td>@specialColumn.Works.Count</td>
+						<td>
+							<a asp-action="EditSpecialColumn" asp-route-id="@specialColumn.SpecialColumnId">编辑</a>
+							<a asp-action="DeleteSpecialColumn" asp-route-id="@specialColumn.SpecialColumnId">删除</a>
+						</td>
+					</tr>
+				}
+			</table>
+			<div>
+				每页 @Model.PageSize 条记录，本页有 @Model.Count 条记录,共有 @Model.TotalItemCount 条记录。第 @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) 页，共 @Model.PageCount 页。
+				@Html.PagedListPager(Model, page => Url.Action("ListSpecialColumn", new { page }))
+			</div>
+		</div>
+	</div>

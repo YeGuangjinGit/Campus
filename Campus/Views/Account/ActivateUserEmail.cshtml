@@ -1,0 +1,9 @@
+﻿@model EmailAddressViewModel
+<h2>激活邮箱</h2>
+<hr />
+<form method="post">
+	<input asp-for="Email" />
+	<span asp-validation-for="Email" class="text-danger"></span>
+	<button type="submit">提交</button>
+</form>
+<div asp-validation-summary="All" class="text-danger"></div>

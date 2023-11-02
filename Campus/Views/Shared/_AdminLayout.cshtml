@@ -1,0 +1,119 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using Campus.Models
+@inject UserManager<AppUser> _userManager
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+	<link rel="stylesheet" type="text/css" href="~/lib/assets/css/bootstrap-clearmin.min.css">
+	<link rel="stylesheet" type="text/css" href="~/lib/assets/css/roboto.css">
+	<link rel="stylesheet" type="text/css" href="~/lib/assets/css/material-design.css">
+	<link rel="stylesheet" type="text/css" href="~/lib/assets/css/small-n-flat.css">
+	<link rel="stylesheet" type="text/css" href="~/lib/assets/css/font-awesome.min.css">
+	<title>@ViewBag.Title</title>
+	@RenderSection("style", required: false)
+</head>
+<body class="cm-no-transition cm-1-navbar">
+	<div id="cm-menu">
+		<nav class="cm-navbar cm-navbar-primary">
+			<div class="cm-flex"><a href="index.html" class="cm-logo"></a></div>
+			<div class="btn btn-primary md-menu-white" data-toggle="cm-menu"></div>
+		</nav>
+		<div id="cm-menu-content">
+			<div id="cm-menu-items-wrapper">
+				<div id="cm-menu-scroller">
+					<ul class="cm-menu-items">
+						<li class="active"><a asp-action="Index" asp-controller="Admin" class="sf-house">首页</a></li>
+						<li><a asp-action="ListRoles" asp-controller="Admin" class="sf-keyring">权限管理</a></li>
+						<li><a asp-action="ListSpecialColumns" asp-controller="Admin" class="sf-funnel">分栏管理</a></li>
+						<li><a asp-action="ListUsers" asp-controller="Admin" class="sf-profile-group">用户管理</a></li>
+						<li><a asp-action="ListWorks" asp-controller="Admin" class="sf-file-text">文章管理</a></li>
+						<li class="cm-submenu">
+							<a class="sf-cat">用户意见<span class="caret"></span></a>
+							<ul>
+								<li><a href="#">未处理</a></li>
+								<li><a href="#">已处理</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<header id="cm-header">
+		<nav class="cm-navbar cm-navbar-primary">
+			<div class="btn btn-primary md-menu-white hidden-md hidden-lg" data-toggle="cm-menu"></div>
+			<div class="cm-flex">
+				<h1>首页</h1>
+				<form id="cm-search" action="index.html" method="get">
+					<input type="search" name="q" autocomplete="off" placeholder="搜索...">
+				</form>
+			</div>
+			<div class="pull-right">
+				<div id="cm-search-btn" class="btn btn-primary md-search-white" data-toggle="cm-search"></div>
+			</div>
+			<div class="dropdown pull-right">
+				<button class="btn btn-primary md-notifications-white" data-toggle="dropdown"> <span class="label label-danger">3</span> </button>
+				<div class="popover cm-popover bottom">
+					<div class="arrow"></div>
+					<div class="popover-content">
+						<div class="list-group">
+							<a href="#" class="list-group-item">
+								<h4 class="list-group-item-heading text-overflow">
+									<i class="fa fa-fw fa-envelope"></i> 王总
+								</h4>
+								<p class="list-group-item-text text-overflow">今晚有个聚会，老弟你一定要来！</p>
+							</a>
+							<a href="#" class="list-group-item">
+								<h4 class="list-group-item-heading text-overflow">
+									<i class="fa fa-fw fa-envelope"></i> 阳光小学-校赛组
+								</h4>
+								<p class="list-group-item-text">您的孩子在校比赛获得了一等奖！</p>
+							</a>
+							<a href="#" class="list-group-item">
+								<h4 class="list-group-item-heading">
+									<i class="fa fa-fw fa-warning"></i> 物业管理处
+								</h4>
+								<p class="list-group-item-text">你的电费已经四个月没交了，但愿您能愉快的度过盛夏。</p>
+							</a>
+						</div>
+						<div style="padding:10px"><a class="btn btn-success btn-block" href="#">查看更多...</a></div>
+					</div>
+				</div>
+			</div>
+			<div class="dropdown pull-right">
+				<button class="btn btn-primary md-account-circle-white" data-toggle="dropdown"></button>
+				<ul class="dropdown-menu">
+					<li class="disabled text-center">
+						<a style="cursor:default;"><strong>@((await _userManager.GetUserAsync(Context.User)).Nickname)</strong></a>
+					</li>
+					<li class="divider"></li>
+					<li>
+						<a href="#"><i class="fa fa-fw fa-user"></i> 个人</a>
+					</li>
+					<li>
+						<a href="#"><i class="fa fa-fw fa-cog"></i> 设置</a>
+					</li>
+					<li>
+						<a asp-action="LogOut" asp-controller="Account"><i class="fa fa-fw fa-sign-out"></i> 登出</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+	</header>
+	<!-- 主体区域替换 -->
+	<div id="global">
+		@RenderBody()
+	</div>
+	<!-- 主体区域替换结束 -->
+	<script src="~/lib/assets/js/lib/jquery.min.js"></script>
+	<script src="~/lib/assets/js/jquery.mousewheel.min.js"></script>
+	<script src="~/lib/assets/js/jquery.cookie.min.js"></script>
+	<script src="~/lib/assets/js/fastclick.min.js"></script>
+	<script src="~/lib/assets/js/bootstrap.min.js"></script>
+	<script src="~/lib/assets/js/clearmin.min.js"></script>
+	<script src="~/lib/assets/js/demo/home.js"></script>
+	@RenderSection("script",false)
+</body>
+</html>

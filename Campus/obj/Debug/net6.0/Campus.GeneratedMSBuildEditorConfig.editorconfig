@@ -1,0 +1,205 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = Campus
+build_property.RootNamespace = Campus
+build_property.ProjectDir = C:\Users\叶光津\Desktop\大三项目完结\Campus\Campus\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\叶光津\Desktop\大三项目完结\Campus\Campus
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/叶光津/Desktop/大三项目完结/Campus/Campus/Views/Account/AccessDenied.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxBY2Nlc3NEZW5pZWQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/叶光津/Desktop/大三项目完结/Campus/Campus/Views/Account/AcitvateUserEmailConfirmation.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxBY2l0dmF0ZVVzZXJFbWFpbENvbmZpcm1hdGlvbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/叶光津/Desktop/大三项目完结/Campus/Campus/Views/Account/ActivateUserEmail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxBY3RpdmF0ZVVzZXJFbWFpbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/叶光津/Desktop/大三项目完结/Campus/Campus/Views/Account/ConfirmEmail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxDb25maXJtRW1haWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/叶光津/Desktop/大三项目完结/Campus/Campus/Views/Account/ForgotPassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxGb3Jnb3RQYXNzd29yZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/叶光津/Desktop/大三项目完结/Campus/Campus/Views/Account/ForgotPasswordConfirmation.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxGb3Jnb3RQYXNzd29yZENvbmZpcm1hdGlvbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/叶光津/Desktop/大三项目完结/Campus/Campus/Views/Account/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/叶光津/Desktop/大三项目完结/Campus/Campus/Views/Account/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/叶光津/Desktop/大三项目完结/Campus/Campus/Views/Account/ResetPassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZXNldFBhc3N3b3JkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/叶光津/Desktop/大三项目完结/Campus/Campus/Views/Account/ResetPasswordConfirmation.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZXNldFBhc3N3b3JkQ29uZmlybWF0aW9uLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/叶光津/Desktop/大三项目完结/Campus/Campus/Views/Admin/CreateRole.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQ3JlYXRlUm9sZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/叶光津/Desktop/大三项目完结/Campus/Campus/Views/Admin/CreateSpecialColumn.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQ3JlYXRlU3BlY2lhbENvbHVtbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/叶光津/Desktop/大三项目完结/Campus/Campus/Views/Admin/EditRole.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRWRpdFJvbGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/叶光津/Desktop/大三项目完结/Campus/Campus/Views/Admin/EditUser.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRWRpdFVzZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/叶光津/Desktop/大三项目完结/Campus/Campus/Views/Admin/EditUserInRole.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRWRpdFVzZXJJblJvbGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/叶光津/Desktop/大三项目完结/Campus/Campus/Views/Admin/EditWorks.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRWRpdFdvcmtzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/叶光津/Desktop/大三项目完结/Campus/Campus/Views/Admin/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/叶光津/Desktop/大三项目完结/Campus/Campus/Views/Admin/ListRoles.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cTGlzdFJvbGVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/叶光津/Desktop/大三项目完结/Campus/Campus/Views/Admin/ListSpecialColumns.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cTGlzdFNwZWNpYWxDb2x1bW5zLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/叶光津/Desktop/大三项目完结/Campus/Campus/Views/Admin/ListUsers.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cTGlzdFVzZXJzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/叶光津/Desktop/大三项目完结/Campus/Campus/Views/Admin/ListWorks.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cTGlzdFdvcmtzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/叶光津/Desktop/大三项目完结/Campus/Campus/Views/Admin/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/叶光津/Desktop/大三项目完结/Campus/Campus/Views/Admin/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/叶光津/Desktop/大三项目完结/Campus/Campus/Views/Home/AddComplains.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBZGRDb21wbGFpbnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/叶光津/Desktop/大三项目完结/Campus/Campus/Views/Home/CampusWorld.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDYW1wdXNXb3JsZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/叶光津/Desktop/大三项目完结/Campus/Campus/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/叶光津/Desktop/大三项目完结/Campus/Campus/Views/Platform/CollectionView.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGxhdGZvcm1cQ29sbGVjdGlvblZpZXcuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/叶光津/Desktop/大三项目完结/Campus/Campus/Views/Platform/Comments.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGxhdGZvcm1cQ29tbWVudHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/叶光津/Desktop/大三项目完结/Campus/Campus/Views/Platform/Manage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGxhdGZvcm1cTWFuYWdlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/叶光津/Desktop/大三项目完结/Campus/Campus/Views/Platform/Read.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGxhdGZvcm1cUmVhZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/叶光津/Desktop/大三项目完结/Campus/Campus/Views/Platform/second_comments.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGxhdGZvcm1cc2Vjb25kX2NvbW1lbnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/叶光津/Desktop/大三项目完结/Campus/Campus/Views/Platform/Submission_Guide.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGxhdGZvcm1cU3VibWlzc2lvbl9HdWlkZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/叶光津/Desktop/大三项目完结/Campus/Campus/Views/Platform/Upload.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGxhdGZvcm1cVXBsb2FkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/叶光津/Desktop/大三项目完结/Campus/Campus/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/叶光津/Desktop/大三项目完结/Campus/Campus/Views/Shared/NotFound.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXE5vdEZvdW5kLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/叶光津/Desktop/大三项目完结/Campus/Campus/Views/Shared/_AdminLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9BZG1pbkxheW91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/叶光津/Desktop/大三项目完结/Campus/Campus/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/叶光津/Desktop/大三项目完结/Campus/Campus/Views/Space/Account.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3BhY2VcQWNjb3VudC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/叶光津/Desktop/大三项目完结/Campus/Campus/Views/Space/ComplainsList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3BhY2VcQ29tcGxhaW5zTGlzdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/叶光津/Desktop/大三项目完结/Campus/Campus/Views/Space/Face.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3BhY2VcRmFjZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/叶光津/Desktop/大三项目完结/Campus/Campus/Views/Space/FollowList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3BhY2VcRm9sbG93TGlzdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/叶光津/Desktop/大三项目完结/Campus/Campus/Views/Space/Info.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3BhY2VcSW5mby5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/叶光津/Desktop/大三项目完结/Campus/Campus/Views/Space/MyPosts.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3BhY2VcTXlQb3N0cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/叶光津/Desktop/大三项目完结/Campus/Campus/Views/Space/opinion.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3BhY2Vcb3Bpbmlvbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/叶光津/Desktop/大三项目完结/Campus/Campus/Views/Space/SpaceBase.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3BhY2VcU3BhY2VCYXNlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/叶光津/Desktop/大三项目完结/Campus/Campus/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/叶光津/Desktop/大三项目完结/Campus/Campus/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 

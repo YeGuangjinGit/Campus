@@ -1,0 +1,245 @@
+
+#school_shetuan{
+	height: 890px;
+	width: 100%;
+	background-color: #efebea;
+}
+@font-face {
+	font-family: "叶根友圆趣卡通简体";
+	src: url("../font/tff/叶根友圆趣卡通简体.ttf");
+}
+#school_shetuan_ul{
+	height: 700px;
+	width: 100px;
+	font-size: 50px;
+	font-family: "叶根友圆趣卡通简体";
+	float: left;
+	display: none;
+}
+#school_shetuan_ul ul {
+position: relative;
+top: 150px;
+left: 50px;
+}
+#school_shetuan_ul ul li{
+	padding-top: 20px;
+}
+#Sch_net{
+	height:80%;
+	width:200px;
+	background-color: #61BFAD;
+	position: relative;
+	left: 100px;
+	top: 50px;
+	float: left;
+	transform: rotateY(30deg);
+	transform-style: preserve-3d;
+	display: none;
+}
+#Sch_backetball{
+	height:80%;
+	width:200px;
+	background-color: #167C80;
+	position: relative;
+	left: -50px;
+	top: 80px;
+	float: left;
+	display: none;
+}
+#Sch_net_text{
+	color: azure;
+	font-size: 20px;
+	font-family: "宋体";
+	line-height: 50px;
+	text-align: center;
+}
+#Sch_net_text_1{
+	margin: auto;
+	width: 90%;
+	color: azure;
+	font-size: 15px;
+	font-family: "宋体";
+	line-height: 40px;
+}
+#Sch_net_img{
+	width:100%;
+	height: 80px;
+	margin-top: 40px;
+}
+#Sch_net_img img{
+	width: 100%;
+	height:150px;
+}
+#Sch_net_1{
+	height:80%;
+	width:200px;
+	background-color: #0138B1;
+	position: relative;
+	left: 30px;
+	top: 120px;
+	float: left;
+	transform: rotateY(30deg);
+	transform-style: preserve-3d;
+	opacity: 0.7;
+	display: none;
+}
+#Sch_backetball_1{
+	height:80%;
+	width:200px;
+	background-color: #005397;
+	position: relative;
+	left: -120px;
+	top: 150px;
+	float: left;
+	display: none;
+}
+#Sch_net_text_bt_1{
+	color: azure;
+	font-size: 20px;
+	font-family: "宋体";
+	line-height: 50px;
+	text-align: center;
+}
+#Sch_net_text_2{
+	margin: auto;
+	width: 90%;
+	color: azure;
+	font-size: 15px;
+	font-family: "宋体";
+	line-height: 40px;
+}
+#Sch_net_img_1{
+	width:100%;
+	height: 80px;
+	margin-top: 40px;
+}
+#Sch_net_img_1 img{
+	width: 100%;
+	height:150px;
+}
+#Sch_net_3{
+	height:80%;
+	width:200px;
+	background-color: #9C9CDD;
+	position: relative;
+	left: -30px;
+	top: 50px;
+	float: left;
+	transform: rotateY(30deg);
+	transform-style: preserve-3d;
+	display: none;
+}
+#Sch_backetball_3{
+	height:80%;
+	width:200px;
+	background-color: #776EA7;
+	position: relative;
+	left: -180px;
+	top: 80px;
+	float: left;
+	display: none;
+}
+#Sch_net_text_bt_3{
+	color: azure;
+	font-size: 20px;
+	font-family: "宋体";
+	line-height: 50px;
+	text-align: center;
+}
+#Sch_net_text_3{
+	margin: auto;
+	width: 90%;
+	color: azure;
+	font-size: 15px;
+	font-family: "宋体";
+	line-height: 40px;
+}
+#Sch_net_img_3{
+	width:100%;
+	height: 80px;
+	margin-top: 40px;
+}
+#Sch_net_img_3 img{
+	width: 100%;
+	height:150px;
+}
+#sch_more{
+	width:70px;
+	height:100px;
+	background-color: #B22222;
+	clear: both;
+	position: relative;
+	top: -450px;
+	left: 1445px;
+	margin-top: 300px;
+	border-radius:50px 0px 0px 50px;
+	text-align: center;
+	padding-top:10px;
+}
+#sch_more ul{
+	margin-top: 20px;
+}
+#sch_more ul li{
+	font-size: 20px;
+	font-family: "方正少儿简体";
+}
+#small_shetuan{
+	float:right;
+	position: relative;
+	top:-550px;
+	right: 60px;
+	width:300px;
+	height:200px;
+	background-color: #B22222;
+	font-size: 25px;
+	color: white;
+	box-shadow: 5px 5px 20px 5px blueviolet;
+	font-family: "宋体";
+}
+#Sch_net_4{
+	height:80%;
+	width:200px;
+	background-color: #FF8B8B;
+	position: relative;
+	left: -100px;
+	top: 120px;
+	float: left;
+	transform: rotateY(30deg);
+	transform-style: preserve-3d;
+	display: none;
+}
+#Sch_backetball_4{
+	clear: both;
+	height:80%;
+	width:200px;
+	background-color: #E54B4B;
+	position: relative;
+	left: 1250px;
+	top: -562px;
+	float: left;
+	display: none;
+}
+#Sch_net_text_bt_4{
+	color: azure;
+	font-size: 20px;
+	font-family: "宋体";
+	line-height: 50px;
+	text-align: center;
+}
+#Sch_net_text_4{
+	margin: auto;
+	width: 90%;
+	color: azure;
+	font-size: 15px;
+	font-family: "宋体";
+	line-height: 40px;
+}
+#Sch_net_img_4{
+	width:100%;
+	height: 80px;
+	margin-top: 40px;
+}
+#Sch_net_img_4 img{
+	width: 100%;
+	height:150px;
+}

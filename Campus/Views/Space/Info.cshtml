@@ -1,0 +1,86 @@
+﻿@model SpaceSettingInfoViewModel
+@{
+	Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width" />
+	<title>@ViewBag.Title</title>
+	<link rel="stylesheet" type="text/css" href="~/css/setting/setting.css" />
+	<link rel="stylesheet" type="text/css" href="~/css/setting/setting_info.css" />
+	<script src="~/lib/jquery/jquery-3.3.1.min.js"></script>
+	<script src="~/lib/setting/setting.js"></script>
+	<style>
+		 .nav ul li:nth-child(2){
+            background-color:#666699;
+            color:white;
+        }
+	</style>
+</head>
+<body>
+		<img src="~/img/face.png" class="face-img"/>
+
+	<div class="container">
+		<div class="nav">
+			<ul>
+				<li>个人中心</li>
+				<li id="Info">我的信息</li>
+				<li id="Face">我的头像</li>
+				<li id="Account">账号安全</li>
+				<li id="Identity">实名认证</li>
+				<li id="Platform">投稿中心</li>
+				<li id="Space">个人空间</li>
+			</ul>
+		</div>
+		<div class="body">
+			<div class="title"><span style="background-color:#666699;"></span>@ViewBag.Title</div>
+			<div class="form">
+				<form method="post" asp-action="Info" asp-controller="Space">
+					<table>
+						<tr>
+							<td>昵称：</td>
+							<td colspan="4">
+								<input asp-for="Nickname" />
+								<span asp-for="Nickname"></span>
+							</td>
+							<td colspan="3">&nbsp;&nbsp;&nbsp;注：昵称也要注意形象！</td>
+						</tr>
+						<tr>
+							<td>用户名：</td>
+							<td colspan="7" id="username">@Model.UserName</td>
+						</tr>
+						<tr>
+							<td>我的签名：</td>
+							<td rowspan="3" colspan="7">
+								<textarea asp-for="PersonalSignature"></textarea>
+								<span asp-for="PersonalSignature"></span>
+							</td>
+						</tr>
+						<tr></tr>
+						<tr></tr>
+						<tr>
+							<td>性别：</td>
+							<td>@Html.RadioButtonFor(m=>m.Gender,2)男</td>
+							<td>@Html.RadioButtonFor(m=>m.Gender,3)女</td>
+							<td>@Html.RadioButtonFor(m=>m.Gender,1)保密</td>
+						</tr>
+						<tr>
+							<td>出生日期：</td>
+							<td colspan="7">
+								<input asp-for="Birth" type="date" />
+								<span asp-for="Birth"></span>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="8">
+								<input type="submit" value="保存" />
+							</td>
+						</tr>
+					</table>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

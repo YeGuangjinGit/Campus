@@ -1,0 +1,381 @@
+﻿@model IndexViewModel
+@{
+	ViewBag.Title = "主页";
+}
+@section style{
+	<link rel="stylesheet" href="~/css/Index.css">
+	<link rel="stylesheet" href="~/css/shc_news.css">
+	<link rel="stylesheet" href="~/css/school_shetuan.css">
+	<link rel="stylesheet" href="~/css/Sch_ygj.css">
+	<link rel="stylesheet" href="~/css/sch_bottom.css">
+	<link rel="stylesheet" href="~/css/back.css">
+	<link rel="stylesheet" href="~/css/div_wei.css">
+	<link href="~/font/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+	<!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+	<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css">
+	<style>
+		#HeadPic, #HeadPic_login {
+			width: 50px;
+			height: 50px;
+			border: 2px dashed white;
+			border-radius: 50%;
+		}
+	</style>
+}
+	<div id="School_Head">
+		<div id="School_Head_ul">
+			<ul>
+				<li><a href="#">校园简介</a></li>
+				<li>|</li>
+				<li><a asp-action="CampusWorld">校园天地</a></li>
+				<li>|</li>
+				<li><a href="#">校园风景</a></li>
+				<li>|</li>
+				<li><a href="#">国家新闻</a></li>
+				<li>|</li>
+				<li><a href="#">学生论坛</a></li>
+			</ul>
+		</div>
+		<div id="School_Head_people">
+			<ul>
+				<li><a href="#">校园之家</a></li>
+				<li>|</li>
+				@if (Model.IsAdmin)
+			{
+				<li><a asp-action="Index" asp-controller="Admin">网站后台</a></li>
+			}
+			else
+			{
+				<li><a href="#">意见箱</a></li>
+			}
+
+		</ul>
+	</div>
+
+</div>
+<div id="School_DaoHang">
+
+	<div id="Sch_dh_Pic">
+		<div id="School_DaoHang_wz">夏日学院</div>
+		<div id="School_DaoHang_ul">
+			<ul>
+				<li><a asp-action="CampusWorld" asp-route-specialColumnValue="校园热卖">校园热卖</a></li>
+				<li><a asp-action="CampusWorld" asp-route-specialColumnValue="社团活动">社团活动</a></li>
+				<li><a asp-action="CampusWorld" asp-route-specialColumnValue="校园活动">校园活动</a></li>
+				<li><a asp-action="CampusWorld" asp-route-specialColumnValue="校园防疫">校园防疫</a></li>
+			</ul>
+		</div>
+		<div id="my">
+			@if (@Model.HeadPortrait == null)
+			{
+				<button type="button" id="HeadPic_login"
+					style="background:url('/img/nologin_headimg.png');background-size: 100%;background-repeat:no-repeat" ;
+					background-size: 100%;"></button>
+			}
+			else
+			{
+				<button type="button" id="HeadPic" data-container="body"
+					style="background:url(@Model.HeadPortrait);background-size: 100%;background-repeat:no-repeat" ;
+					data-toggle="popover" data-placement="bottom" data-html="true"
+					data-content="<ul><li><a href='/space'>个人中心</a></li><li><a href='/account/logout'>退出登录</a></li></ul>"></button>
+			}
+		</div>
+	</div>
+	<div id="school_logo">本图片由夏日校园提供</div>
+</div>
+<!-- 校园资讯方块滑出特效 -->
+<div id="School_News">
+	<div id="School_News_BiaoTIi">夏日·要闻</div>
+	<div id="School_News_text">
+		<div id="School_News_img1">
+			<img asp-append-version src="./img/News_logo.jpg">
+			<div id="School_News_img1_text">夏日学生大扫除活动</div>
+		</div>
+		<div class="shc_news">
+			<div class="sch_news_text">新华社上海5月3日电 题：齐心协力，坚持定能胜利——聚焦上海战“疫”攻坚</div>
+			<hr>
+		</div>
+		<div class="shc_news1">
+			<div class="sch_news_text1">韩媒：中美关系专家郑在浩或出任韩国新政府驻华大使</div>
+			<hr>
+		</div>
+		<div class="shc_news2">
+			<div class="sch_news_text2">北京“健康宝”功能优化升级：北京个人健康码、核酸、疫苗集中展示</div>
+			<hr>
+		</div>
+		<div class="shc_news3">
+			<div class="sch_news_text3">巴西取消对欧盟观察10月总统大选的邀请 </div>
+			<hr>
+		</div>
+		<div class="shc_news4">
+			<div class="sch_news_text4">交通运输部：目前各地层层加码、“一刀切”劝返等问题明显减少</div>
+			<hr>
+		</div>
+		<div class="shc_news5">
+			<div class="sch_news_text5">全力稳增长保畅通稳市场，加快建设交通强国——访交通运输部党组成员、总规划师徐成光</div>
+			<hr>
+		</div>
+		<div class="shc_news6">
+			<div class="sch_news_text6">【卫生健康宣传日】世界手卫生日——团结一致为了安全：清洁您的双手。</div>
+			<hr>
+		</div>
+		<div class="shc_news7">
+			<div class="sch_news_text7">防疫防护，从你我做起！</div>
+			<hr>
+		</div>
+	</div>
+	<div id="School_News_img2">
+		<img asp-append-version src="./img/News_logo.jpg">
+		<div id="School_News_img1_text">夏日学生大扫除活动</div>
+	</div>
+</div>
+<div id="school_shetuan">
+	<div id="school_shetuan_ul">
+		<ul>
+			<li>社</li>
+			<li>团</li>
+			<li>·</li>
+			<li>招</li>
+			<li>新</li>
+		</ul>
+	</div>
+
+	<div id="Sch_net"></div>
+	<div id="Sch_backetball">
+		<div id="Sch_net_text">.net计算机社团</div>
+		<div id="Sch_net_text_1">
+			.net计算机是针对于网页页面设计的计算机社团，我们计算机社团的web前端技术以及非常之好，喜爱计算机并且喜爱计算机设计的小伙伴可以来到我们计算机社！一同创造更加漂亮美好的网页!
+		</div>
+		<div id="Sch_net_img">
+			<img asp-append-version src="img/logo1.jpg">
+		</div>
+	</div>
+
+	<div id="Sch_net_1"></div>
+	<div id="Sch_backetball_1">
+		<div id="Sch_net_text_bt_1">.net计算机社团</div>
+		<div id="Sch_net_text_2">
+			.net计算机是针对于网页页面设计的计算机社团，我们计算机社团的web前端技术以及非常之好，喜爱计算机并且喜爱计算机设计的小伙伴可以来到我们计算机社！一同创造更加漂亮美好的网页!
+		</div>
+		<div id="Sch_net_img_1">
+			<img asp-append-version src="img/logo1.jpg">
+		</div>
+	</div>
+
+	<div id="Sch_net_3"></div>
+	<div id="Sch_backetball_3">
+		<div id="Sch_net_text_bt_3">.net计算机社团</div>
+		<div id="Sch_net_text_3">
+			.net计算机是针对于网页页面设计的计算机社团，我们计算机社团的web前端技术以及非常之好，喜爱计算机并且喜爱计算机设计的小伙伴可以来到我们计算机社！一同创造更加漂亮美好的网页!
+		</div>
+		<div id="Sch_net_img_3">
+			<img asp-append-version src="img/logo1.jpg">
+		</div>
+	</div>
+
+	<div id="Sch_net_4"></div>
+	<div id="Sch_backetball_4">
+		<div id="Sch_net_text_bt_4">.net计算机社团</div>
+		<div id="Sch_net_text_4">
+			.net计算机是针对于网页页面设计的计算机社团，我们计算机社团的web前端技术以及非常之好，喜爱计算机并且喜爱计算机设计的小伙伴可以来到我们计算机社！一同创造更加漂亮美好的网页!
+		</div>
+		<div id="Sch_net_img_4">
+			<img asp-append-version src="img/logo1.jpg">
+		</div>
+	</div>
+	<!-- <div id="small_shetuan">--青春文学社</div>
+	<div id="sch_more">
+		<ul>
+			<li>更</li>
+			<li>多</li>
+			<li style="margin-left: 10px;"><i class="fa fa-angle-double-right" aria-hidden="true"></i></li>
+		</ul>
+	</div> -->
+</div>
+<div id="Sch_ygj">
+	<div id="sch_ygj_tg"></div>
+	<div id="sch_ygj_text">学与·抗疫</div>
+	<div id="sch_ygj_img1">
+		<div id="sch_ygj_img1_text">
+			<p>
+				重大传染性疾病是人类的共同敌人。当前，新冠肺炎疫情在全球加速蔓延，
+				确诊病例超过40万例，波及190多个国家和地区，给人民生命安全和身体健康带来巨大威胁，
+				给全球公共卫生安全带来巨大挑战。这次疫情再次表明，人类是一个休戚与共的命运共同体。
+				面对这一全球性挑战，我们没有退路，唯有齐心协力、团结应对。全面加强国际合作，凝聚全球战疫强大合力，
+				既是此次特别峰会的重要使命，也承载着国际社会的迫切期待。
+			</p>
+		</div>
+	</div>
+	<div id="sch_ygj_text1">
+		重大传染性疾病是人类的共同敌人。当前，新冠肺炎疫情在全球加速蔓延，
+		确诊病例超过40万例，波及190多个国家和地区，给人民生命安全和身体健康带来巨大威胁，
+		给全球公共卫生安全带来巨大挑战。这次疫情再次表明，人类是一个休戚与共的命运共同体。
+		面对这一全球性挑战，我们没有退路，唯有齐心协力、团结应对。全面加强国际合作，凝聚全球战疫强大合力，
+		既是此次特别峰会的重要使命，也承载着国际社会的迫切期待。
+	</div>
+	<div id="sch_ygj_img2"></div>
+	<div id="sch_mok">
+		<div id="sch_mok_text">校园·生活</div>
+		<div id="sch_mok_1">
+			<i class="fa fa-heartbeat" aria-hidden="true" style="font-size: 50px;"></i>
+			<p>抗疫快讯</p>
+		</div>
+		<div id="sch_mok_2">
+			<i class="fa fa-bookmark-o" aria-hidden="true" style="font-size: 50px;"></i>
+			<p>学习竞赛</p>
+		</div>
+		<div id="sch_mok_3">
+			<i class="fa fa-bookmark-o" aria-hidden="true" style="font-size: 50px;"></i>
+			<p>学习竞赛</p>
+		</div>
+		<div id="sch_mok_4">
+			<i class="fa fa-twitter" aria-hidden="true" style="font-size: 80px;"></i>
+			<p>校园·热帖</p>
+		</div>
+	</div>
+</div>
+<div id="sch_bottom">
+	<div id="sch_bottom_text">
+		通知公告·<span style="color:black">夏日新闻</span>
+	</div>
+	<div id="sch_bottom_div">
+		<div id="sch_bottom_div_text">
+			<a href="#">关于"2022中国企业家管理论坛"有情况声明</a>
+			<p style="color: lightgray;">2022.5.10--------------------------------------------------</p>
+		</div>
+		<div id="sch_bottom_div_text2">
+			<a href="#">关于"2022中国企业家管理论坛"有情况声明</a>
+			<p style="color: lightgray;">2022.5.10--------------------------------------------------</p>
+		</div>
+		<div id="sch_bottom_div_text3">
+			<a href="#">关于"2022中国企业家管理论坛"有情况声明</a>
+			<p style="color: lightgray;">2022.5.10--------------------------------------------------</p>
+		</div>
+		<hr />
+	</div>
+	<div id="sch_bottom_divv">
+		<div id="sch_bottom_div_textv">
+			<a href="#">学校积极响应国家号召：做核酸！</a>
+			<p style="color: lightgray;">2022.5.10--------------------------------------------------</p>
+		</div>
+		<div id="sch_bottom_div_textv1">
+			<a href="#">全体师生凌晨5点的核酸证明...</a>
+			<p style="color: lightgray;">2022.5.10--------------------------------------------------</p>
+		</div>
+		<div id="sch_bottom_div_textv2">
+			<a href="#">招生简章...</a>
+			<p style="color: lightgray;">2022.5.10--------------------------------------------------</p>
+		</div>
+		<hr />
+	</div>
+</div>
+<div id="div_wei">
+	<div id="div_wei_text">
+		夏日校园
+		<p>SUMMERSCHOOL</p>
+	</div>
+	<div id="div_wei_ul">
+		<ul>
+			<li>版权所有©夏日大学</li>
+			<li>地址：湖北省武汉市洪山区野芷湖?号</li>
+			<li>邮编：420070</li>
+			<li>反馈意见：54074625@qq.com</li>
+			<li>鄂ICP备2022008923号-1</li>
+		</ul>
+	</div>
+</div>
+<div id="back">
+	<img asp-append-version src="img/topjiantou.png" alt="" id="img_jiantou">
+	<img asp-append-version src="img/return_top_img.gif" alt="" id="back_img">
+</div>
+
+@section script{
+	<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+	<script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script>
+		$(function() {
+			//图片轮播
+			var item = new Array();
+			var num = 0;
+			item[0] = "img/logo1.jpg"
+			item[1] = "img/logo2.jpg"
+			item[2] = "img/logo3.jpg"
+			item[3] = "img/logo4.jpg"
+			item[4] = "img/News_logo.jpg"
+			setInterval(function() {
+				num++;
+				if (num == 5) {
+					num = 0;
+				}
+				$("#School_DaoHang").css("background-image", "url(" + item[num] + ")")
+			}, 3000) //换图时间
+
+			$(document).scrollTop(100);
+			// 被卷去的头部 scrollTop()  / 被卷去的左侧 scrollLeft()
+			// 页面滚动事件
+			var boxTop = $("#School_News").offset().top;
+			$(window).scroll(function() {
+				// console.log(11);
+				console.log($(document).scrollTop());
+				if ($(document).scrollTop() >= boxTop) {
+					$("#back").fadeIn();
+				} else {
+					$("#back").fadeOut();
+				}
+			});
+			// 返回顶部
+			$("#back").click(function() {
+				// $(document).scrollTop(0);
+				$("body, html").stop().animate({
+					scrollTop: 0
+				});
+				// $(document).stop().animate({
+				//     scrollTop: 0
+				// }); 不能是文档而是 html和body元素做动画
+			})
+			$("#sch_ygj_img1").hover(function() {
+				$("#sch_ygj_img1_text").slideDown(500)
+			}, function() {
+				$("#sch_ygj_img1_text").slideUp(500)
+			})
+
+			$('#HeadPic').popover()
+			$('#HeadPic_login').click(function() {
+				window.location = "/account/login";
+			})
+
+		})
+		$(window).scroll(function() {
+			var scrollTop = $(this).scrollTop();
+			var scrollHeight = $(document).height();
+			var windowHeight = $(this).height();
+			var scrollTop = document.documentElement.scrollTop;
+			if (scrollTop >= 180 && scrollTop <= 450) {
+				$("#School_News_BiaoTIi").fadeIn(2000)
+				$("#School_News_img1_text").fadeIn(2000)
+				$("#School_News_img2_text").fadeIn(2000)
+				$(".shc_news").fadeIn(2000)
+				$(".shc_news1").fadeIn(2000)
+				$(".shc_news2").fadeIn(2000)
+				$(".shc_news3").fadeIn(2000)
+				$(".shc_news4").fadeIn(2000)
+				$(".shc_news5").fadeIn(2000)
+				$(".shc_news6").fadeIn(2000)
+				$(".shc_news7").fadeIn(2000)
+				$("#School_News_img2").fadeIn(2000)
+				$("#School_News_img1").fadeIn(2000)
+			}
+			if (scrollTop >= 1200 && scrollTop <= 1300) {
+				$("#school_shetuan_ul").slideDown(2000)
+				$("#Sch_net").slideDown(2000)
+				$("#Sch_backetball").slideDown(2000)
+				$("#Sch_net_1").slideDown(2000)
+				$("#Sch_backetball_1").slideDown(2000)
+				$("#Sch_backetball_3").slideDown(2000)
+				$("#Sch_backetball_4").slideDown(2000)
+				$("#Sch_net_3").slideDown(2000)
+				$("#Sch_net_4").slideDown(2000)
+			}
+		});
+	</script>
+}

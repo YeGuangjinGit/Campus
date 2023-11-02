@@ -1,0 +1,67 @@
+﻿@model SpaceSettingFaceViewModel
+@{
+	Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width" />
+	<title>@ViewBag.Title</title>
+	<link rel="stylesheet" type="text/css" href="~/css/setting/setting.css" />
+	<link rel="stylesheet" type="text/css" href="~/css/setting/setting_face.css" />
+	<script src="~/lib/jquery/jquery-3.3.1.min.js"></script>
+	<script src="~/lib/setting/setting.js"></script>
+	<style>
+		 .nav ul li:nth-child(3){
+            background-color:#666699;
+            color:white;
+        }
+	</style>
+</head>
+<body>
+	<img src="~/img/face.png" class="face-img"/>
+	<div class="container">
+		<div class="nav">
+			<ul>
+				<li>个人中心</li>
+				<li id="Info">我的信息</li>
+				<li id="Face">我的头像</li>
+				<li id="Account">账号安全</li>
+				<li id="Identity">实名认证</li>
+				<li id="Platform">投稿中心</li>
+				<li id="Space">个人空间</li>
+			</ul>
+		</div>
+		<div class="body">
+			<div class="title"><span style="background-color:#666699"></span>@ViewBag.Title</div>
+			<div class="form">
+				<form method="post" asp-action="Face" asp-controller="Space" enctype="multipart/form-data">
+					<div>
+						<div>
+							<input asp-for="File" />
+							<br />
+
+							<input type="submit" value="提交" />
+							<div asp-validation-summary="All"></div>
+						</div>
+						<div class="line" style="background-color:#666699;width:2px;"></div>
+						<div style="margin-left:30px;">
+							<input asp-for="HeadPortrait" type="hidden" style="background-color:#666699"/>
+							<img asp-append-version src="@Model.HeadPortrait" id="img" />
+							<div id="tip">当前头像</div>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<script>
+		$(function() {
+			$("#File").change(function() {
+				$("#img").attr("src",  URL.createObjectURL($("#File").prop('files')[0]));
+				$("#tip").text("预览头像");
+			})
+		})
+	</script>
+</body>
+</html>

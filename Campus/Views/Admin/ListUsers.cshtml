@@ -1,0 +1,73 @@
+﻿@model IPagedList<AppUser>
+
+@{
+	ViewBag.Title = "用户列表";
+}
+@section style{
+	<style>
+		table {
+			width: 100%;
+			margin:20px auto;
+		}
+
+		td {
+			text-align: center
+		}
+
+		@@media(max-width:768px) {
+			.email, .name, .birth, .sex {
+				display: none;
+			}
+		}
+	</style>
+}
+	<div class="container-fluid">
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<h4>用户管理</h4>
+
+				<form>
+					<div class="input-group input-group-lg">
+						<input type="text" name="searchValue" class="form-control" placeholder="搜索(用户名、邮箱、昵称)">
+						<span class="input-group-btn">
+							<button style="z-index:2" class="btn btn-primary md-search-white" type="submit">&nbsp;&nbsp;&nbsp;&nbsp;</button>
+						</span>
+					</div>
+				</form>
+
+				<table border="1" style="border-spacing:0px">
+					<tr>
+						<td class="username">用户名</td>
+						<td class="email">邮箱</td>
+						<td class="nickname">昵称</td>
+						<td class="name">姓名</td>
+						<td class="birth">生日</td>
+						<td class="sex">性别</td>
+						<td class="createat">注册时间</td>
+						<td class="state">帐号状态</td>
+						<td class="action">操作</td>
+					</tr>
+					@foreach (var user in Model)
+				{
+					<tr>
+						<td class="username">@user.UserName</td>
+						<td class="email">@user.Email</td>
+						<td class="nickname">@user.Nickname</td>
+						<td class="name">无</td>
+						<td class="birth">@Convert.ToDateTime(user.Birth).ToShortDateString()</td>
+						<td class="sex">@user.Gender.GenderValue</td>
+						<td class="createat">@user.CreateAt</td>
+						<td class="state">@user.EmailConfirmed</td>
+						<td class="action">
+							<a asp-action="EditUser" asp-route-Id="@user.Id">编辑</a>
+						</td>
+					</tr>
+				}
+			</table>
+			<div>
+				每页 @Model.PageSize 条记录，本页有 @Model.Count 条记录,共有 @Model.TotalItemCount 条记录。第 @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) 页，共 @Model.PageCount 页。
+				@Html.PagedListPager(Model, page => Url.Action("ListUsers", new { page }))
+			</div>
+		</div>
+	</div>
+</div>

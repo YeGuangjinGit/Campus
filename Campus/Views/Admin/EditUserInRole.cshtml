@@ -1,0 +1,25 @@
+﻿@model List<UserRoleViewModel>
+@{
+	ViewBag.Title = "编辑角色";
+	var roleId = ViewBag.RoleId;
+}
+<div class="container-fluid">
+	<form method="post">
+		<h2>在此角色中添加或删除用户</h2>
+		<div>
+			@for (int i = 0; i < Model.Count; i++)
+			{
+				<div>
+					<input asp-for="@Model[i].UserId" type="hidden">
+					<input asp-for="@Model[i].UserName" type="hidden">
+					<input asp-for="@Model[i].IsSelected">
+					<label asp-for="@Model[i].IsSelected">@Model[i].UserName</label>
+				</div>
+			}
+		</div>
+		<div>
+			<input type="submit" value="更新" />
+			<a asp-action="EditRole" asp-route-id="@roleId">取消</a>
+		</div>
+	</form>
+</div>

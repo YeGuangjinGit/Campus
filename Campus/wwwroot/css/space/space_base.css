@@ -1,0 +1,334 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+body {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    clear: both;
+    opacity: 0.9;
+}
+
+#pc-body {
+    width: 75%;
+}
+
+.pc-top {
+    width: 100%;
+    height: 300px;
+    background-image: url('/img/SpaceBase/perple_bgi1.gif');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    display: flex;
+    align-items: flex-end;
+    
+}
+
+
+.pc-xinxi {
+    width: 100%;
+    height: 35%;
+    display: flex;
+}
+
+.px-left {
+    width: 70%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+
+
+#span_img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+/* 
+.pc-tx::before {
+    content: "更换头像";
+    display: inline-block;
+    z-index: 1;
+    height: 20px;
+    color: red;
+    display: inline;
+} */
+
+/* //鼠标悬浮时的灰膜样式设置 */
+.pc-tx {
+    z-index: 1;
+    display: inline-block;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 0px 5px 2px lightgray;
+    width: 105px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 105px;
+    border-radius: 50%;
+    margin-left: 20px;
+    /* position: relative; */
+}
+
+.pc-tx:after {
+    content: "";
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 2;
+    -webkit-transition: 0.2s;
+    -moz-transition: 0.2s;
+    -ms-transition: 0.2s;
+    -o-transition: 0.2s;
+    transition: 0.2s;
+    border-radius: 50%;
+    position: absolute;
+    width: 105px;
+    height: 105px;
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+
+.pc-tx:hover:after {
+    opacity: 100;
+    filter: alpha(opacity=0);
+    cursor: pointer;
+}
+
+@media screen and (min-width:375px) and (max-width:667px) {
+    .pc-tx {
+        height: 20px;
+        width: 20px;
+    }
+}
+
+
+.qm_css {
+    line-height: 28px;
+    height: 30px;
+    padding: 0 10px;
+    transition: all .3s ease;
+    vertical-align: top;
+    border: 1px solid #ccd0d7;
+    border-radius: 0;
+    letter-spacing: 0.1rem;
+    color: black;
+    width: 90%;
+}
+
+#qm_txt {
+    background: transparent;
+    border-radius: 4px;
+    border: none;
+    box-shadow: none;
+    color: rgba(78, 78, 78, 0.8);
+
+    font-size: 14px;
+    font-family: Microsoft Yahei;
+    line-height: 26px;
+    height: 30px;
+    margin-left: -5px;
+    padding: 0 5px;
+    width: 90%;
+    background-clip: text;
+
+}
+
+#qm_txt:hover {
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    background-color: rgba(192, 192, 192, 0.575);
+}
+
+.pc-info {
+    height: 60%;
+    /* background-color: black; */
+    width: 85%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.pc-name {
+    width: 98%;
+    height: 40%;
+    margin-left: 2%;
+    display: flex;
+    align-items: center;
+}
+
+.pc-qianming {
+    width: 98%;
+    height: 40%;
+    margin-left: 2%;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+}
+
+.user_name {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    font-size: 17px;
+    padding-left: 10px;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+.pc-identity {
+    height: 50%;
+    border: 1px solid rgb(241, 0, 0);
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    border: 1px solid yellow;
+    border-radius: 6px;
+    background-color: yellow;
+    background: linear-gradient(25deg, rgb(160, 113, 205), rgb(97, 119, 209));
+    letter-spacing: 1px;
+    font-size: 9px;
+    cursor: pointer;
+    color: white;
+}
+
+.pc-sex {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.px-right span img {
+    height: 20px;
+    width: 20px;
+}
+
+.px-right span {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    margin-bottom: 10px;
+    background-color: rgba(218, 212, 208, 0.21);
+    width: 20%;
+}
+
+.px-right {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 30%;
+    height: 100%;
+}
+
+.px-right span p {
+    font-size: 10px;
+    color: gray;
+
+}
+
+.px-right span:hover p {
+    color: #666699;
+}
+
+.px-right span:hover {
+    background-color: #a4a4be;
+}
+
+.pc-title {
+    width: 100%;
+    height: 12%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+
+.title {
+    width: 50%;
+    height: 100%;
+    letter-spacing: 2px;
+    display: flex;
+    align-items: center;
+}
+
+.title span {
+    display: flex;
+}
+
+
+
+#changes_span1,
+#changes_span2,
+#changes_span3,
+#changes_span4 {
+    line-height: 4rem;
+    text-align: center;
+    /* 鼠标变小手 */
+    cursor: pointer;
+    width: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 2px solid white;
+}
+
+    #changes_span1:hover,
+    #changes_span2:hover,
+    #changes_span3:hover,
+    #changes_span4:hover {
+        border-color: skyblue;
+        mask-border-width: 5px;
+    }
+
+.good {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.pc-goods:hover {
+    color: skyblue;
+}
+
+.pc-fans:hover {
+    color: skyblue;
+}
+
+.pc-goods {
+    width: 20%;
+    display: flex;
+    flex-wrap: wrap;
+    cursor: pointer;
+    height: 50%;
+}
+
+.pc-goods span {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.pc-fans {
+    width: 20%;
+    display: flex;
+    flex-wrap: wrap;
+    cursor: pointer;
+}
+
+.pc-fans span {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}

@@ -1,0 +1,14 @@
+﻿@model CreateSpecialColumnViewModel
+<div class="container-fluid">
+	<p class="text-danger"><h3>创建分栏</h3></p>
+	<form asp-controller="admin" asp-action="Create" method="post">
+		<label asp-for="SpecialColumnValue"></label>
+		<input asp-for="SpecialColumnValue" />
+		<span asp-validation-for="SpecialColumnValue"></span>
+
+		<div>
+			<a asp-action="ListSpecialColumns" class="btn btn-default">返回</a>
+			<input type="submit" class="btn btn-success" value="新增分栏" />
+		</div>
+	</form>
+</div>

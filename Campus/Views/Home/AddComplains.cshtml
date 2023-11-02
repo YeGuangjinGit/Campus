@@ -1,0 +1,27 @@
+﻿@model Campus.Models.Opinion
+@section style{
+<link rel="stylesheet" href="~/css/addComplains.css">
+}
+    <form method="post">
+        <div id="complains_body">
+            <input type="hidden" asp-for="UserId" />
+            <table>
+                <tr>
+                    <td>标题：</td>
+                    <td><input type="text" id="complains_txt" asp-for="OpinionTitle" style="width: 592px;"/></td>
+                </tr>
+                <tr>
+                    <td>意见内容：</td>
+                    <td><textarea rows="10" cols="80" asp-for="OpinionContent" maxlength="200"></textarea></td>
+                </tr>
+            </table>
+             <span style="margin-left:390px"><input type="submit" value="提交" style="margin:10px 20px"><input type="button" value="取消" id="return" style="margin:10px 20px"/></span>
+        </div>
+    </form>
+    @section script{
+    <script>
+$("#return").click(function() { 
+ window.history.go(-1)
+})
+    </script>
+    }

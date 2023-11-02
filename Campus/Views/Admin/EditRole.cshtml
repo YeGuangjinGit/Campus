@@ -1,0 +1,42 @@
+﻿@model EditRoleViewModel
+@{
+	ViewBag.Title = "编辑角色";
+}
+<div class="container-fluid">
+	<h1>编辑角色</h1>
+	<form method="post">
+		<div>
+			<label asp-for="Id"></label>
+			<input asp-for="Id" readonly="readonly" />
+		</div>
+		<div>
+			<label asp-for="RoleName"></label>
+			<input asp-for="RoleName" />
+			<span asp-validation-for="RoleName"></span>
+		</div>
+		<div asp-validation-summary="All"></div>
+		<div>
+			<input type="submit" value="更新" />
+			<a asp-action="ListRoles">取消</a>
+		</div>
+		<div>
+			<h3>该角色的用户</h3>
+		</div>
+		<div>
+			@if (Model.Users.Any())
+			{
+				foreach (var user in Model.Users)
+				{
+					<h5>@user</h5>
+				}
+			}
+			else
+			{
+				<h5>目前没有用户信息</h5>
+			}
+		</div>
+		<div>
+			<a asp-action="EditUserInRole" asp-route-roleId="@Model.Id">从角色中添加或删除用户</a>
+		</div>
+	</form>
+</div>

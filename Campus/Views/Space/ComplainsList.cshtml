@@ -1,0 +1,27 @@
+﻿@model List<Campus.Models.Opinion>
+@section style{
+	<link rel="stylesheet" href="~/css/complains.css" asp-append-version="true">
+}
+<div id="complains _Body">
+			<div id="complains_Head">
+				投稿意见
+			</div>
+			@foreach (var item in @Model)
+	{
+		<div class="complains">
+				<div class="complains_BT">
+					@(item.OpinionTitle.Length <=20?item.OpinionTitle:item.OpinionTitle.Substring(0,20)+"...")
+				</div>
+				<div class="complains_NR">
+					@(item.OpinionContent.Length <=40?item.OpinionContent:item.OpinionContent.Substring(0,40)+"...")
+				</div>
+				<div class="complains_R">
+					<span>@item.User.Nickname</span>	
+				</div>
+				<div class="complains_Button">
+					<a asp-action="opinion" asp-controller="space" asp-route-id="@item.OpinionId" style="color:white">详情</a>
+				</div>
+				</div>
+				
+	}
+	</div>

@@ -1,0 +1,84 @@
+﻿@{
+	ViewBag.Title = "后台首页";
+}
+@section style{
+	<link rel="stylesheet" type="text/css" href="~/lib/assets/css/c3.min.css">
+}
+
+	<div class="container-fluid">
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<h4>账户类型统计</h4>
+				<div class="row">
+					<div class="col-sm-4">
+						<div class="panel panel-default">
+							<div class="panel-heading">学生</div>
+							<div class="panel-body">
+								<div id="d1-c1" style="height:150px"></div>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-4">
+						<div class="panel panel-default">
+							<div class="panel-heading">教师</div>
+							<div class="panel-body">
+								<div id="d1-c2" style="height:150px"></div>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-4">
+						<div class="panel panel-default">
+							<div class="panel-heading">管理员</div>
+							<div class="panel-body">
+								<div id="d1-c3" style="height:150px"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	@section script{
+
+	<script src="~/lib/assets/js/lib/d3.min.js"></script>
+	<script src="/lib/assets/js/lib/c3.min.js"></script>
+
+	<script>
+		$(function() {
+			this.makeGauge = function(selector, value, color) {
+				c3.generate({
+					bindto: selector,
+					data: {
+						columns: [
+							['data', value]
+						],
+						type: 'gauge'
+					},
+					tooltip: {
+						show: false
+					},
+					gauge: {
+						label: {
+							format: function(value, ratio) {
+								return value + '%';
+							},
+							show: false
+						},
+						min: 0,
+						max: 100,
+						units: ' %',
+						width: 50
+					},
+					color: {
+						pattern: [color, color, color], // the 3 color levels for the percentage values.
+					}
+				});
+			};
+
+			this.makeGauge('#d1-c1', 64, '#1abc9c');
+			this.makeGauge('#d1-c2', 28, '#3498db');
+			this.makeGauge('#d1-c3', 8, '#f39c12');
+		})
+	</script>
+}

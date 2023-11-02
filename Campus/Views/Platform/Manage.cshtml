@@ -1,0 +1,62 @@
+﻿@model IEnumerable<WorksManage>
+@{
+	Layout = null;
+}
+<link rel="stylesheet" href="~/css/postManage.css" asp-append-version="true">
+
+<div class="homepage">
+
+	@foreach (var worksManage in Model)
+	{
+		<div class="manuscript-div">
+			<div class="manuscript">
+				<div class="img-box"><img src="@worksManage.Img" asp-append-version></div>
+				<div class="content">
+					<div class="Plate-1">
+						<span class="Label-type">@worksManage.SpecialColumnValue</span><span>
+							<a asp-action="Read" asp-route-id="@worksManage.EncryptedId"
+						   style="margin-left:12px ;font-size: 20px;">
+								@worksManage.Title
+							</a>
+						</span>
+					</div>
+					<div class="Plate-2"><span>@worksManage.DisplayContent</span></div>
+					<div class="Plate-3"><span>发布时间：<span>@worksManage.ReleaseTime</span></span></div>
+					<div class="Plate-4">
+						<div style="width:90%;">
+							<span>
+								👀&nbsp;&nbsp;<span>@worksManage.Browse</span>
+							</span>
+							<span>
+								🗨&nbsp;&nbsp;<span>@worksManage.CommentCount</span>
+							</span>
+							<span>
+								⭐&nbsp;&nbsp;<span>@worksManage.CollectionCount</span>
+							</span>
+							<span>
+								👍&nbsp;&nbsp;<span>@worksManage.FabulouCount</span>
+							</span>
+						</div>
+						<div class="delete"><button onclick="DeleteMyWorks('@worksManage.EncryptedId')">删除</button></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	}
+</div>
+<script>
+	function DeleteMyWorks(id) {
+		if (confirm('你真的要删除吗？')) {
+			$.ajax({
+				url: "/Platform/DeleteMyWorks",
+				data: {
+					id: id
+				},
+				method: "Get",
+				success: function(res) {
+					$("#content").html(res);
+				}
+			})
+		}
+	}
+</script>
